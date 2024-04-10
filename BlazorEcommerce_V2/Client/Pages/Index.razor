@@ -1,9 +1,18 @@
 ﻿@page "/"
+@page "/{categoryUrl}"
+@inject IProductService ProductService
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Online Shop</PageTitle>
 
-<h1>Hello, world!</h1>
+<ProductList />
 
-Welcome to your new app.
+@code {
+    [Parameter]
+    public string? CategoryUrl { get; set; } = null;
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+    protected override async Task OnParametersSetAsync()
+    {
+        await ProductService.GetProducts(CategoryUrl);
+     
+    }
+}

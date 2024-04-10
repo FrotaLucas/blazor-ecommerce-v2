@@ -1,0 +1,69 @@
+﻿@* @inject HttpClient Http; *@
+@inject IProductService ProductService;  //Pq PascalCase ? Variavel deveria se usar CamelCase!!!!!!!!!!
+@implements IDisposable;
+
+@if (ProductService.Products == null || ProductService.Products.Count == 0)
+{
+    <span>Loading ...</span>
+}
+
+else
+{
+    <ul class="list-unstyled">
+
+        @foreach (var product in ProductService.Products)
+        {
+            <li class="media my-3">
+                <div class="media-img-wrapper mr-2">
+                    <a href="/product/@product.Id">
+                        <img class="media-img" src="@product.ImageUrl" alt="@product.Title" />
+                    </a>
+                </div>
+                <div class="media-body">
+                    <a href="/product/@product.Id">
+                        <h4 class="mb-0">@product.Title</h4>
+                    </a>
+                    <p>@product.Description</p>
+                    @* <h5 class="price">$@product.Price</h5> *@
+           
+                </div>
+            </li>
+        }
+
+    </ul>
+}
+
+@code {
+    //1 Solucao
+    //pQ Products precisa ser static ???????
+    //private static List<Product> Products = new List<Product>();
+
+    //pQ protected e override aqui ?????
+    //estudar depois como seri se usarmos o metodo OnAfterRenderAsync !!!!
+
+    protected override async Task OnInitializedAsync()
+    {
+        await ProductService.GetProducts();
+
+        //PQ ISSO AQUI NAO ESTA CERTO? PQ o campo Products nao esta mais sendo preenchido ??
+        // var result = await productService.GetProduct();
+
+        // if(result != null && result.Data != null)
+        // {
+        //     Products = result.Data;
+        // }
+    }
+
+
+    //2 Solucao
+    protected override void OnInitialized()
+    {
+        ProductService.ProductsChanged += StateHasChanged;
+    }
+
+    //pq tem que ser publico ?
+    public void Dispose()
+    {
+        ProductService.ProductsChanged -= StateHasChanged;
+    }
+}

@@ -1,0 +1,27 @@
+﻿.media-img[b-s8oi4mw9in] {
+    max-height: 200px;
+    max-width: 200px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    transition: transform .2s;
+}
+
+.media-img:hover[b-s8oi4mw9in] {
+    transform: scale(1.5);
+}
+
+.media-img-wrapper[b-s8oi4mw9in] {
+    width: 200px;
+    text-align: center;
+}
+
+@media (max-width: 1023.98px) {
+    .media[b-s8oi4mw9in] {
+        flex-direction: column;
+    }
+
+    .media-img-wrapper[b-s8oi4mw9in] {
+        width: 100%;
+        height: auto;
+    }
+}
