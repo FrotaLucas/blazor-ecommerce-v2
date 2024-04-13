@@ -17,7 +17,7 @@ namespace BlazorEcommerce_V2.Shared
         public Category Category { get; set; }
         public int CategoryId { get; set; }
 
-        public List<ProductVariant> Variants = new List<ProductVariant>();
+        public List<ProductVariant> Variants { get; set; } = new List<ProductVariant>();
 
     }
 }

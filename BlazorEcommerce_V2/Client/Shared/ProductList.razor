@@ -24,7 +24,7 @@ else
                         <h4 class="mb-0">@product.Title</h4>
                     </a>
                     <p>@product.Description</p>
-                    @* <h5 class="price">$@product.Price</h5> *@
+                    <h5 class="price">@GetPriceText(product)</h5>
            
                 </div>
             </li>
@@ -34,24 +34,10 @@ else
 }
 
 @code {
-    //1 Solucao
-    //pQ Products precisa ser static ???????
-    //private static List<Product> Products = new List<Product>();
-
-    //pQ protected e override aqui ?????
-    //estudar depois como seri se usarmos o metodo OnAfterRenderAsync !!!!
 
     protected override async Task OnInitializedAsync()
     {
         await ProductService.GetProducts();
-
-        //PQ ISSO AQUI NAO ESTA CERTO? PQ o campo Products nao esta mais sendo preenchido ??
-        // var result = await productService.GetProduct();
-
-        // if(result != null && result.Data != null)
-        // {
-        //     Products = result.Data;
-        // }
     }
 
 
@@ -65,5 +51,23 @@ else
     public void Dispose()
     {
         ProductService.ProductsChanged -= StateHasChanged;
+    }
+
+    public string GetPriceText(Product product)
+    {
+        var variants = product.Variants;
+
+        if(variants.Count == 0)
+        {
+            return string.Empty;
+        }
+
+        else if(variants.Count == 1)
+        {
+            return $"${variants[0].Price}";
+        }
+
+        decimal minPrice = variants.Min(p => p.Price);
+        return $"starting at ${minPrice}";
     }
 }
