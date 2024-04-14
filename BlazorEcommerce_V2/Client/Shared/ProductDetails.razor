@@ -21,6 +21,19 @@ else
             <h2 class="mb-0">@product.Title</h2>
 
             <p>@product.Description</p>
+            <div class="mb-3">
+                @if(product.Variants != null && product.Variants.Count > 1)
+                {
+                    <select class="form-selected" @bind = "currentTypeId">
+                        @foreach( var item in product.Variants)
+                        {
+                            <option value="@item.ProductTypeId">@item.ProductType.Name</option>
+                        }
+                    </select>
+                }
+
+            </div>
+
             @if (GetSelectedVariant()!= null)
             {
                 @if (GetSelectedVariant().OriginalPrice > GetSelectedVariant().Price)
