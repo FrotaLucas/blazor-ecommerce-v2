@@ -4,7 +4,7 @@
 
 @if (ProductService.Products == null || ProductService.Products.Count == 0)
 {
-    <span>Loading ...</span>
+    <span>@ProductService.Message</span>
 }
 
 else
@@ -41,13 +41,12 @@ else
     }
 
 
-    //2 Solucao
+    //2 pr tem que ser protected?
     protected override void OnInitialized()
     {
         ProductService.ProductsChanged += StateHasChanged;
     }
 
-    //pq tem que ser publico ?
     public void Dispose()
     {
         ProductService.ProductsChanged -= StateHasChanged;

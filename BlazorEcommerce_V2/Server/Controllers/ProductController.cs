@@ -45,10 +45,11 @@ namespace BlazorEcommerce_V2.Server.Controllers
 
             return Ok(response);
         }
-        
+
         [HttpGet("searchsuggentions/{searchText}")]
         public async Task<ActionResult<ServiceResponse<List<Product>>>> GetProductSearchSuggestions(string searchText)
         {
+            //ATENCAO. O RETORNO Do BD nao eh <List<Product> mas sim <List<striing>. Nao eh um erro????
             var response = await _productService.GetProductSearchSuggestions(searchText);
 
             return Ok(response);

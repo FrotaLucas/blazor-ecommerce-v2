@@ -69,7 +69,7 @@
                     result.Add(product.Title);
                 }
 
-                if(product.Description != null)
+                if (product.Description != null)
                 {
                     var pontuaction = product.Description.Where(char.IsPunctuation)
                     .Distinct().ToArray();
