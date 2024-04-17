@@ -22,6 +22,7 @@ namespace BlazorEcommerce_V2.Server.Controllers
 
             return Ok(products);
         }
+
         [HttpGet("{productId}")]
         public async Task<ActionResult<ServiceResponse<Product>>> GetProduct(int productId)
         {
@@ -55,5 +56,13 @@ namespace BlazorEcommerce_V2.Server.Controllers
             return Ok(response);
         }
 
+
+        [HttpGet("featured")]
+        public async Task<ActionResult<ServiceResponse<List<Product>>>> GetFeaturedProducts()
+        {
+            var products = await _productService.GetFeaturedProducts();
+
+            return Ok(products);
+        }
     }
 }

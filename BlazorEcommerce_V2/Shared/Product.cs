@@ -14,6 +14,7 @@ namespace BlazorEcommerce_V2.Shared
         public string Description { get; set; } = string.Empty;
         public string ImageUrl { get; set; } = string.Empty;
 
+        public bool Featured {  get; set; } = false;
         public Category Category { get; set; }
         public int CategoryId { get; set; }
 

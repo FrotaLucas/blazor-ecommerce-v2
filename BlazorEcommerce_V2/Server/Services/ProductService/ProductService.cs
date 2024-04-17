@@ -8,7 +8,25 @@
                 _context = context;
             }
 
-            public async Task<ServiceResponse<Product>> GetProductAsync(int productId)
+        public async Task<ServiceResponse<List<Product>>> GetFeaturedProducts()
+        {
+            //ServiceResponse<List<Product>> serviceResponse = new ServiceResponse<List<Product>>();
+            //var result = await _context.Products.Where(p => p.Featured).Include(p => p.Variants).ToListAsync();
+
+            //if (result != null)
+            //{
+            //    serviceResponse.Data = result;
+            //}
+
+            var serviceResponse = new ServiceResponse<List<Product>>
+            {
+                Data = await _context.Products.Where(p => p.Featured).Include(p => p.Variants).ToListAsync()
+            };
+
+            return serviceResponse;
+        }
+
+        public async Task<ServiceResponse<Product>> GetProductAsync(int productId)
             {
                 var response = new ServiceResponse<Product>();
                 var product = await _context.Products.Include(p=> p.Variants).
