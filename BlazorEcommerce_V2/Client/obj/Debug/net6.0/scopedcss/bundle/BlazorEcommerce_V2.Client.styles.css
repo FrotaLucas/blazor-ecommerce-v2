@@ -1,3 +1,38 @@
+/* /Shared/FeaturedProducts.razor.rz.scp.css */
+.container[b-7rpt1qbx3c] {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    justify-content: center;
+}
+
+img[b-7rpt1qbx3c] {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 6px;
+    transition: transform .15s;
+    margin-bottom: 10px;
+}
+
+img:hover[b-7rpt1qbx3c] 
+{
+    transform: scale(1.3) rotate(5deg);
+}
+
+.featured-product[b-7rpt1qbx3c] {
+    margin: 10px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    max-width: 200px;
+}
+
+@media (max-width: 1023.98px) {
+    .container[b-7rpt1qbx3c] {
+        justify-content: flex-start;
+    }
+}
 /* /Shared/HomeButton.razor.rz.scp.css */
 .home-button[b-mejroeu265] {
     white-space: nowrap;

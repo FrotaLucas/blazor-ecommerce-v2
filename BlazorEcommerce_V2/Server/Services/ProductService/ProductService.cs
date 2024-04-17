@@ -10,14 +10,6 @@
 
         public async Task<ServiceResponse<List<Product>>> GetFeaturedProducts()
         {
-            //ServiceResponse<List<Product>> serviceResponse = new ServiceResponse<List<Product>>();
-            //var result = await _context.Products.Where(p => p.Featured).Include(p => p.Variants).ToListAsync();
-
-            //if (result != null)
-            //{
-            //    serviceResponse.Data = result;
-            //}
-
             var serviceResponse = new ServiceResponse<List<Product>>
             {
                 Data = await _context.Products.Where(p => p.Featured).Include(p => p.Variants).ToListAsync()
