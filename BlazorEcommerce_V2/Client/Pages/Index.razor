@@ -1,6 +1,7 @@
 ﻿@page "/"
 @page "/{categoryUrl}"
-@page "/search/{searchText}"
+@page "/search/{searchText}/{page:int}"
+@* Pq os parametros aqui das rotas sao minusculas mas as variaveis abaixo estao maiusculas ????????? *@
 
 @inject IProductService ProductService
 
@@ -19,13 +20,16 @@ else
     public string SearchText { get; set; } = null;
 
     [Parameter]
-    public string? CategoryUrl { get; set; } = null;
+    public string? CategoryUrl { get; set; } = null; 
+    
+    [Parameter]
+    public int Page { get; set; } = 1;
 
     protected override async Task OnParametersSetAsync()
     {
         if(SearchText !=null )
         {
-            await ProductService.SearchProducts(SearchText);
+            await ProductService.SearchProducts(SearchText, Page);
         }
         else
         {

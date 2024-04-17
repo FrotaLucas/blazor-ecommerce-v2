@@ -101,12 +101,28 @@
              return new ServiceResponse<List<string>> { Data = result };
         }
 
-        public async Task<ServiceResponse<List<Product>>> SearchProducts(string searchText)
+        public async Task<ServiceResponse<ProductSearchResult>> SearchProducts(string searchText, int page)
         {
-            ServiceResponse<List<Product>> response = new ServiceResponse<List<Product>>()
+            var maxProductsPerPage = 2f;
+            var pageCounts = Math.Ceiling((await FindProductsBySeachText(searchText)).Count / maxProductsPerPage);
+            var products = await _context.Products
+                              .Where(p => p.Title.ToLower().Contains(searchText.ToLower()) ||
+                                  p.Description.ToLower().Contains(searchText.ToLower()))
+                              .Include(p => p.Variants)
+                              .Skip((page - 1) * (int)maxProductsPerPage)
+                              .Take((int)maxProductsPerPage)
+                              .ToListAsync();
+
+            ServiceResponse<ProductSearchResult> response = new ServiceResponse<ProductSearchResult>()
             {
-                Data = await FindProductsBySeachText(searchText)
+                Data = new ProductSearchResult
+                {
+                    Products = products,
+                    CurrentPage = page,
+                    Pages = (int)pageCounts
+                }
             };
+
 
             return response;
         }

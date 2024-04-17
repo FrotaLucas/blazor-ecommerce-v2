@@ -233,6 +233,11 @@ main[b-qw1mbwvvr9] {
     text-align: center;
 }
 
+.page-selection[b-s8oi4mw9in]{
+    margin-right: 15px;
+    margin-bottom: 30px;
+}
+
 @media (max-width: 1023.98px) {
     .media[b-s8oi4mw9in] {
         flex-direction: column;

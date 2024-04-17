@@ -15,6 +15,9 @@ namespace BlazorEcommerce_V2.Client.Services.ProductService
         public List<Product> Products { get; set; } = new List<Product>();
 
         public string Message { get; set; } = "Loading products ...";
+        public int CurrentPage { get; set; } = 1;
+        public int PageCount { get; set; } = 0;
+        public string LastSearchText { get; set; } = string.Empty;
 
         public event Action ProductsChanged;
         public async Task<ServiceResponse<Product>> GetProduct(int productId)
@@ -29,7 +32,10 @@ namespace BlazorEcommerce_V2.Client.Services.ProductService
                 await _http.GetFromJsonAsync<ServiceResponse<List<Product>>>($"api/product/category/{categoryUrl}");
             if (result != null && result.Data != null)
                 Products = result.Data;
-
+            if(Products.Count == 0)
+            { Message = "No products found"; }
+            CurrentPage = 1;
+            PageCount = 0;
             //chamada de evento quando metodo GetProducts for acionado
             ProductsChanged.Invoke();
         }
@@ -42,13 +48,18 @@ namespace BlazorEcommerce_V2.Client.Services.ProductService
         }
 
 
-        public async Task SearchProducts(string searchText)
+        public async Task SearchProducts(string searchText, int page)
         {
+            LastSearchText = searchText;
             //pq somente se eu adicionar um breakpoint a atualizacao de Products com evento funciona?
-            var result = await _http.GetFromJsonAsync<ServiceResponse<List<Product>>>($"api/product/search/{searchText}");
+            var result = await _http.GetFromJsonAsync<ServiceResponse<ProductSearchResult>>($"api/product/search/{searchText}/{page}");
             
             if( result != null && result.Data != null )
-                Products = result.Data;
+                {
+                    Products = result.Data.Products;
+                    CurrentPage = result.Data.CurrentPage;
+                    PageCount = result.Data.Pages;
+                }
 
             if (Products.Count == 0) Message = "No products found.";
             ProductsChanged?.Invoke();

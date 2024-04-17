@@ -42,8 +42,8 @@
     }
 
     public void SearchProducts()
-    {
-        NavigationManager.NavigateTo($"search/{searchText}");
+    {   //quando searchText eh nulo, essa rota aqui funciona ?????????????????????
+        NavigationManager.NavigateTo($"search/{searchText}/1");
     }
 
     public async Task HandleSearch(KeyboardEventArgs args)
