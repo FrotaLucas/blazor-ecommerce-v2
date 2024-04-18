@@ -61,7 +61,7 @@ namespace BlazorEcommerce_V2.Client.Services.ProductService
                     PageCount = result.Data.Pages;
                 }
 
-            if (Products.Count == 0) Message = "No products found.";
+            if (result == null || Products.Count == 0) Message = "No products found.";
             ProductsChanged?.Invoke();
         }
     }

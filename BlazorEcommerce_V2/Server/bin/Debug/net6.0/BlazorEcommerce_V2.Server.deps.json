@@ -20,6 +20,17 @@
           "BlazorEcommerce_V2.Server.dll": {}
         }
       },
+      "Blazored.LocalStorage/4.1.5": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "6.0.22"
+        },
+        "runtime": {
+          "lib/net5.0/Blazored.LocalStorage.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "runtime": {
           "lib/netstandard2.0/Humanizer.dll": {
@@ -652,6 +663,7 @@
       "BlazorEcommerce_V2.Client/1.0.0": {
         "dependencies": {
           "BlazorEcommerce_V2.Shared": "1.0.0",
+          "Blazored.LocalStorage": "4.1.5",
           "Microsoft.AspNetCore.Components.WebAssembly": "6.0.22"
         },
         "runtime": {
@@ -670,6 +682,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Blazored.LocalStorage/4.1.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-i9v27ScPOsHv6skc+isE+DZ/mtR53w019Nq2/MnjvpiLV2otbnqqyxfiYnXAU0Ho6MBIvAS2gdf+odbAyDZPzw==",
+      "path": "blazored.localstorage/4.1.5",
+      "hashPath": "blazored.localstorage.4.1.5.nupkg.sha512"
     },
     "Humanizer.Core/2.8.26": {
       "type": "package",
