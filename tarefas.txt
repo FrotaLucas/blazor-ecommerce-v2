@@ -1,4 +1,4 @@
-tarefa arquivo Search.razor
+1tarefa arquivo Search.razor
 
   public async void SearchProducts()
   {
@@ -9,3 +9,7 @@ tarefa arquivo Search.razor
       //quando searchText eh nulo, essa rota aqui funciona ?????????????????????
       NavigationManager.NavigateTo($"search/{searchText}/1");
   }
+
+2 vai na categoria de video-games e tenta adicionas os video games. Eles nao tem preco e 
+nao tem ProductTypeId. Por isso nao sao adicionados !! Preciso adicionar novos ProductVariant
+com Id 12 em diante

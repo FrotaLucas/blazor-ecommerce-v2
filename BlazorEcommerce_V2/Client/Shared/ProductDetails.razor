@@ -1,6 +1,6 @@
 ﻿@page "/product/{id:int}"
 @inject IProductService ProductService;
-
+@inject ICartService CartService;
 @* antes estavamos usando ProductService pq estavamos pegando todos produtos e escolhendo apenas 1 *@
 @* antes estavamos usando ProductService *@
 
@@ -46,6 +46,10 @@ else
                     @GetSelectedVariant().Price
                 </h4>
             }
+            @* NAO EXECUTA usando @AddToCart() *@
+            <button class="btn btn-primary" onclick="@AddToCart">
+                    <i class="oi oi-cart"></i>&nbsp;&nbsp;&nbsp;Add To Cart
+            </button>
         </div>
     </div>
 }
@@ -87,5 +91,16 @@ else
 
         return variant;
     }
+    private async Task AddToCart()
+    {
+        var productVariant = GetSelectedVariant();
+        var cartItem = new CartItem()
+            {
+                ProductId = productVariant.ProductId,
+                ProducTypetId = productVariant.ProductTypeId
+            };
 
+        await CartService.AddToCart(cartItem);
+    }
+    
 }
