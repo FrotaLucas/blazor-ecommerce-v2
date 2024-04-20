@@ -261,29 +261,63 @@
                       new ProductVariant
                       {
                           ProductId = 8,
-                          ProductTypeId = 8,
+                          ProductTypeId = 6,
                           Price = 9.99m,
                           OriginalPrice = 24.99m,
+                      },  
+                      new ProductVariant
+                      {
+                          ProductId = 8,
+                          ProductTypeId = 7,
+                          Price = 9.99m,
+                          OriginalPrice = 51.99m,
                       },
                       new ProductVariant
                       {
                           ProductId = 9,
-                          ProductTypeId = 8,
-                          Price = 14.99m
+                          ProductTypeId = 6,
+                          Price = 34.99m
                       },
+                       new ProductVariant
+                       {
+                           ProductId = 9,
+                           ProductTypeId = 7,
+                           Price = 14.99m
+                       },
                       new ProductVariant
                       {
                           ProductId = 10,
-                          ProductTypeId = 1,
+                          ProductTypeId = 8,
                           Price = 159.99m,
-                          OriginalPrice = 299m
+                          OriginalPrice = 89m
                       },
                       new ProductVariant
                       {
                           ProductId = 11,
+                          ProductTypeId = 8,
+                          Price = 79.99m,
+                          OriginalPrice = 5.99m
+                      },
+                      new ProductVariant
+                      {
+                          ProductId = 12,
+                          ProductTypeId = 9,
+                          Price = 79.99m,
+                          OriginalPrice = 39m
+                      },
+                      new ProductVariant
+                      {
+                          ProductId = 13,
+                          ProductTypeId = 10,
+                          Price = 399.99m,
+                          OriginalPrice = 399m
+                      },
+                      new ProductVariant
+                      {
+                          ProductId = 14,
                           ProductTypeId = 1,
                           Price = 79.99m,
-                          OriginalPrice = 399m
+                          OriginalPrice = 199m
                       }
                 );
         }
