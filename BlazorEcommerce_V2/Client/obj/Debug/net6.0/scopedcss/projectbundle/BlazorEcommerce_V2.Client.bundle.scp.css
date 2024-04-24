@@ -36,6 +36,10 @@
     .btn-delete:hover[b-8clujmfgb5] {
             text-decoration: underline;
     }
+
+.input-quantity[b-8clujmfgb5]{
+    width: 70px;
+ }
 /* /Shared/FeaturedProducts.razor.rz.scp.css */
 .container[b-7rpt1qbx3c] {
     display: flex;

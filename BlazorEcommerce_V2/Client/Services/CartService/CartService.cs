@@ -1,4 +1,5 @@
-﻿using Blazored.LocalStorage;
+﻿using BlazorEcommerce_V2.Shared;
+using Blazored.LocalStorage;
 
 namespace BlazorEcommerce_V2.Client.Services.CartService
 {
@@ -22,7 +23,18 @@ namespace BlazorEcommerce_V2.Client.Services.CartService
                 cart = new List<CartItem>();
             }
 
-            cart.Add(cartItem);
+            var sameItem = cart.Find(x=> x.ProductId == cartItem.ProductId &&
+            x.ProducTypetId == cartItem.ProducTypetId);
+
+            if(sameItem == null)
+            {
+                cart.Add(cartItem);
+            }
+            else
+            {
+                sameItem.Quantity += cartItem.Quantity;
+            }
+
             await _localStorage.SetItemAsync("cart", cart);
             OnChange.Invoke();
         }
@@ -65,6 +77,26 @@ namespace BlazorEcommerce_V2.Client.Services.CartService
                 await _localStorage.SetItemAsync("cart", cart);
                 //pq precisa do Onchange aqui?
                 OnChange.Invoke();
+            }
+        }
+
+        public async Task UpdateQuantity(CartProductResponse product)
+        {
+            var cart = await _localStorage.GetItemAsync<List<CartItem>>("cart");
+
+            if (cart == null)
+            {
+                return;
+            }
+
+            var cartItem = cart.Find(x => x.ProductId == product.ProductId
+            && x.ProducTypetId == product.ProductTypeId);
+
+            if (cartItem != null)
+            {   //NAO ENTENDI ISSO AQUI DE ATUALIZAR cartItem
+                cartItem.Quantity = product.Quantity;
+                //pq precisa desse _localStorage aqui ?
+                await _localStorage.SetItemAsync("cart", cart);
             }
         }
     }
