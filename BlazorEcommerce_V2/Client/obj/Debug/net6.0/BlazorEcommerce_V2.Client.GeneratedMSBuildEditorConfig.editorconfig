@@ -48,6 +48,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Projects_Visual_Studio/BlazorEcommerce_V2/BlazorEcommerce_V2/Client/Pages/Cart.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FydC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-8clujmfgb5
+
 [D:/Projects_Visual_Studio/BlazorEcommerce_V2/BlazorEcommerce_V2/Client/Shared/FeaturedProducts.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEZlYXR1cmVkUHJvZHVjdHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-7rpt1qbx3c
