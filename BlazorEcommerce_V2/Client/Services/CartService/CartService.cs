@@ -32,7 +32,8 @@ namespace BlazorEcommerce_V2.Client.Services.CartService
             }
             else
             {
-                sameItem.Quantity += cartItem.Quantity;
+                //sameItem.Quantity += cartItem.Quantity;
+                sameItem.Quantity = sameItem.Quantity + 1;
             }
 
             await _localStorage.SetItemAsync("cart", cart);
@@ -79,7 +80,7 @@ namespace BlazorEcommerce_V2.Client.Services.CartService
                 OnChange.Invoke();
             }
         }
-
+        //essa funcao tem return ?
         public async Task UpdateQuantity(CartProductResponse product)
         {
             var cart = await _localStorage.GetItemAsync<List<CartItem>>("cart");
@@ -93,7 +94,8 @@ namespace BlazorEcommerce_V2.Client.Services.CartService
             && x.ProducTypetId == product.ProductTypeId);
 
             if (cartItem != null)
-            {   //NAO ENTENDI ISSO AQUI DE ATUALIZAR cartItem
+            {   //NAO ENTENDI ISSO AQUI DE ATUALIZAR cartItem. Ao mudar item cartItem que pertence a lista.
+                //automaticamente a lista cart eh atualiza
                 cartItem.Quantity = product.Quantity;
                 //pq precisa desse _localStorage aqui ?
                 await _localStorage.SetItemAsync("cart", cart);
