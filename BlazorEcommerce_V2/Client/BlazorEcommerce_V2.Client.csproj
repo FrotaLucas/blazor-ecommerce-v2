@@ -1,18 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
-    
-  <ItemGroup>
-    <None Remove="Shared\ProductDetails.razor.css" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Shared\ProductDetails.razor.css" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Blazored.LocalStorage" Version="4.1.5" />
@@ -34,4 +26,7 @@
     <None Include="Pages\Cart.razor" />
   </ItemGroup>
 
+  <ItemGroup>
+		<None Include="Pages\ProductDetails.razor" />
+  </ItemGroup>
 </Project>

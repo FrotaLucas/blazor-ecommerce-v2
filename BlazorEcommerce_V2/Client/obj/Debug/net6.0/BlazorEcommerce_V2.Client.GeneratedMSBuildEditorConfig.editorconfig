@@ -52,6 +52,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FydC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-8clujmfgb5
 
+[D:/Projects_Visual_Studio/BlazorEcommerce_V2/BlazorEcommerce_V2/Client/Pages/ProductDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdERldGFpbHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-z4a77ghc3x
+
 [D:/Projects_Visual_Studio/BlazorEcommerce_V2/BlazorEcommerce_V2/Client/Shared/FeaturedProducts.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEZlYXR1cmVkUHJvZHVjdHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-7rpt1qbx3c
@@ -67,10 +71,6 @@ build_metadata.AdditionalFiles.CssScope = b-qw1mbwvvr9
 [D:/Projects_Visual_Studio/BlazorEcommerce_V2/BlazorEcommerce_V2/Client/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-x0gtuetpak
-
-[D:/Projects_Visual_Studio/BlazorEcommerce_V2/BlazorEcommerce_V2/Client/Shared/ProductDetails.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFByb2R1Y3REZXRhaWxzLnJhem9y
-build_metadata.AdditionalFiles.CssScope = b-14ihqh3g8a
 
 [D:/Projects_Visual_Studio/BlazorEcommerce_V2/BlazorEcommerce_V2/Client/Shared/ProductList.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFByb2R1Y3RMaXN0LnJhem9y

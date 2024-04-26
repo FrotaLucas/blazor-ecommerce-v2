@@ -22,10 +22,10 @@ else
 
             <p>@product.Description</p>
             <div class="mb-3">
-                @if(product.Variants != null && product.Variants.Count > 1)
+                @if (product.Variants != null && product.Variants.Count > 1)
                 {
-                    <select class="form-selected" @bind = "currentTypeId">
-                        @foreach( var item in product.Variants)
+                    <select class="form-selected" @bind="currentTypeId">
+                        @foreach (var item in product.Variants)
                         {
                             <option value="@item.ProductTypeId">@item.ProductType.Name</option>
                         }
@@ -34,7 +34,7 @@ else
 
             </div>
 
-            @if (GetSelectedVariant()!= null)
+            @if (GetSelectedVariant() != null)
             {
                 @if (GetSelectedVariant().OriginalPrice > GetSelectedVariant().Price)
                 {
@@ -48,7 +48,7 @@ else
             }
             @* NAO EXECUTA usando @AddToCart() *@
             <button class="btn btn-primary" onclick="@AddToCart">
-                    <i class="oi oi-cart"></i>&nbsp;&nbsp;&nbsp;Add To Cart
+                <i class="oi oi-cart"></i>&nbsp;&nbsp;&nbsp;Add To Cart
             </button>
         </div>
     </div>
@@ -79,7 +79,7 @@ else
         else
         {
             product = result.Data;
-            if(product.Variants.Count > 0 )
+            if (product.Variants.Count > 0)
             {
                 currentTypeId = product.Variants[0].ProductTypeId;
             }
@@ -102,5 +102,5 @@ else
 
         await CartService.AddToCart(cartItem);
     }
-    
+
 }
