@@ -3,6 +3,7 @@ global using System.Net.Http.Json;
 global using BlazorEcommerce_V2.Client.Services.CategoryService;
 global using BlazorEcommerce_V2.Client.Services.ProductService;
 global using BlazorEcommerce_V2.Client.Services.CartService;
+global using BlazorEcommerce_V2.Client.Services.AuthService;
 
 using BlazorEcommerce_V2.Client;
 using Microsoft.AspNetCore.Components.Web;
@@ -18,5 +19,6 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<IAuthService, AuthService>();   
 
 await builder.Build().RunAsync();
