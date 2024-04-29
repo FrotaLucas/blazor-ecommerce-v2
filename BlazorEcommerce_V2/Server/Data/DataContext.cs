@@ -211,25 +211,25 @@
                       new ProductVariant
                       {
                           ProductId = 4,
-                          ProductTypeId = 5,
+                          ProductTypeId = 2,
                           Price = 3.99m
                       },
                       new ProductVariant
                       {
-                          ProductId = 4,
-                          ProductTypeId = 6,
-                          Price = 9.99m
-                      },
-                      new ProductVariant
-                      {
-                          ProductId = 4,
-                          ProductTypeId = 7,
+                          ProductId = 5,
+                          ProductTypeId = 1,
                           Price = 19.99m
                       },
                       new ProductVariant
                       {
                           ProductId = 5,
-                          ProductTypeId = 5,
+                          ProductTypeId = 2,
+                          Price = 9.99m
+                      },
+                      new ProductVariant
+                      {
+                          ProductId = 5,
+                          ProductTypeId = 3,
                           Price = 3.99m,
                       },
                       new ProductVariant
@@ -325,5 +325,6 @@
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductType> ProductType { get; set; }
         public DbSet<ProductVariant> ProductVariant { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }
