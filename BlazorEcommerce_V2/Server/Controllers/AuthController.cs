@@ -31,5 +31,18 @@ namespace BlazorEcommerce_V2.Server.Controllers
 
             return Ok(response);
         }
+
+        [HttpPost("login")]
+        public async Task<ActionResult<ServiceResponse<string>>> Login( UserRegister request)
+        {
+            var response = await _authService.Login(
+                request.Email, request.Password);
+            if(!response.Success)
+            {
+                return BadRequest(response);
+            }
+
+            return(response);
+        }
     }
 }
