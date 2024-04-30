@@ -69,9 +69,27 @@ namespace BlazorEcommerce_V2.Server.Services.AuthService
                 response.Success = false;
                 response.Message = "User not found";
             }
+            else if(!VerifyPasswordHash(password, user.PasswordHash, user.PasswordSalt))
+            {
+                response.Success = false;
+                response.Message = "Wrong Password.";
+            }
 
+            else
+            {
+                response.Data = "token";
+            }
 
             return response;
+        }
+
+        private bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt )
+        {
+            using(var hmac = new HMACSHA512(passwordSalt)) 
+            {
+                var computedHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+                return computedHash.SequenceEqual(passwordHash);
+            }
         }
     }
 }
