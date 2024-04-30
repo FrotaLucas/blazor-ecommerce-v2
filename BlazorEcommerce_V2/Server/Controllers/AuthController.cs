@@ -33,7 +33,7 @@ namespace BlazorEcommerce_V2.Server.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<ServiceResponse<string>>> Login( UserRegister request)
+        public async Task<ActionResult<ServiceResponse<string>>> Login( UserLogin request)
         {
             var response = await _authService.Login(
                 request.Email, request.Password);
