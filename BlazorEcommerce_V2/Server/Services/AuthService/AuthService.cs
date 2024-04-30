@@ -58,5 +58,20 @@ namespace BlazorEcommerce_V2.Server.Services.AuthService
 
             return false;
         }
+
+        public async Task<ServiceResponse<string>> Login(string email, string password)
+        {
+           ServiceResponse<string> response = new ServiceResponse<string>();
+            var user = await _context.Users.FirstOrDefaultAsync(user => user
+                .Email.ToLower().Equals(email.ToLower()));
+            if(user == null)
+            {
+                response.Success = false;
+                response.Message = "User not found";
+            }
+
+
+            return response;
+        }
     }
 }
