@@ -2,6 +2,7 @@
 @inject IAuthService AuthService
 @inject ILocalStorageService LocalStorage
 @inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider;
 
 <PageTitle>Login</PageTitle>
 
@@ -41,6 +42,8 @@
         if(result.Success)
         {
             await LocalStorage.SetItemAsStringAsync("authToken", result.Data);
+            //pq AuthenticationStateProvider e nao a minha classe CustomAuthStateProvider
+            await AuthenticationStateProvider.GetAuthenticationStateAsync();
             NavigationManager.NavigateTo("");
         }
         else

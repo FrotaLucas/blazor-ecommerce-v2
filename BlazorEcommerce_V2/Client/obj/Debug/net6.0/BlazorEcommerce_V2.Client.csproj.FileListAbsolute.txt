@@ -841,6 +841,7 @@ D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\icudt_EFIGS.dat
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\icudt_no_CJK.dat
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Authorization.dll
+D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Authorization.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Components.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Forms.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Web.dll
@@ -1095,6 +1096,7 @@ D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\System.Net.WebProxy.dll.gz
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.Configuration.FileExtensions.dll.gz
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\System.Xml.XmlSerializer.dll.gz
+D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Authorization.dll.gz
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\System.Private.Xml.Linq.dll.gz
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\System.Threading.Timer.dll.gz
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\System.Text.Encoding.dll.gz
@@ -1237,6 +1239,7 @@ D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\Blazored.LocalStorage.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\Microsoft.AspNetCore.Authorization.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\Microsoft.AspNetCore.Components.dll
+D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Authorization.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Forms.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Web.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\Microsoft.AspNetCore.Components.WebAssembly.dll
@@ -1442,6 +1445,7 @@ D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\build-gz\OLT0+nVR.gz
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\build-gz\oiLjuKBD.gz
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\build-gz\uy4rh5CB.gz
+D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\build-gz\ffDovp9K.gz
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\build-gz\sV3ZOFYe.gz
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\build-gz\k4aAq2p4.gz
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\build-gz\gPjQrWXN.gz
@@ -1658,6 +1662,7 @@ D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\scopedcss\Shared\ProductList.razor.rz.scp.css
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\scopedcss\Shared\ShopLayout.razor.rz.scp.css
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\scopedcss\Shared\ShopNavMenu.razor.rz.scp.css
+D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\scopedcss\Shared\UserButton.razor.rz.scp.css
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\scopedcss\bundle\BlazorEcommerce_V2.Client.styles.css
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\scopedcss\projectbundle\BlazorEcommerce_V2.Client.bundle.scp.css
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\BlazorEcommerce_V2.Client.csproj.CopyComplete
@@ -1665,8 +1670,3 @@ D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\refint\BlazorEcommerce_V2.Client.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\BlazorEcommerce_V2.Client.pdb
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\ref\BlazorEcommerce_V2.Client.dll
-D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\scopedcss\Shared\UserButton.razor.rz.scp.css
-D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Authorization.dll
-D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Authorization.dll.gz
-D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Authorization.dll
-D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\build-gz\ffDovp9K.gz

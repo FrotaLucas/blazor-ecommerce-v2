@@ -1,12 +1,24 @@
-﻿<div class="dropdown">
+﻿@inject ILocalStorageService LocalStorageService
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager NagivationManager
+
+
+<div class="dropdown">
     <button @onclick="ToggleUserMenu"
             @onfocusout="HideUserMenu"
             class="btn btn-secondary dropdown-toggle user-button">
          <i class="oi oi-person"></i>
     </button>
     <div class="dropdown-menu dropdown-menu-right @userMenuCssClass">
-        <a href="/login" class="dropdown-item">Login</a>
-        <a href="/register" class="dropdown-item">Register</a>
+        <AuthorizeView>
+            <Authorized>
+                <button class="dropdown-item" @onclick="Logout">Logout</button>
+            </Authorized>
+            <NotAuthorized>
+                <a href="/login" class="dropdown-item">Login</a>
+                <a href="/register" class="dropdown-item">Register</a>
+            </NotAuthorized>
+        </AuthorizeView>
     </div>
 
 </div>
@@ -27,4 +39,10 @@
         showUserMenu = false;
     }
 
+    private async Task Logout()
+    {
+        await LocalStorageService.RemoveItemAsync("authToken");
+        await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        NagivationManager.NavigateTo("");
+    }
 }

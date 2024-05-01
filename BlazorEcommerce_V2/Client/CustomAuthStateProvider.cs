@@ -9,10 +9,10 @@ namespace BlazorEcommerce_V2.Client
     public class CustomAuthStateProvider : AuthenticationStateProvider
     {
         private readonly ILocalStorageService _localStorageService;
-        private readonly HttpClient _httpClient;
+        private readonly HttpClient _http;
         public CustomAuthStateProvider(ILocalStorageService LocalStorageService, HttpClient http)
         {
-            _httpClient = http;
+            _http = http;
             _localStorageService = LocalStorageService;
         }
         public override async Task<AuthenticationState> GetAuthenticationStateAsync()
@@ -21,19 +21,19 @@ namespace BlazorEcommerce_V2.Client
             
             var identity = new ClaimsIdentity();
             //checar se essa secao Authorization esta sendo criada dentro da HTTP request !!!!!!!!!!!!!!
-            _httpClient.DefaultRequestHeaders.Authorization = null;
+            _http.DefaultRequestHeaders.Authorization = null;
 
-            if(string.IsNullOrEmpty(authToken))
+            if(!string.IsNullOrEmpty(authToken))
             {
                 try
                 {
                     identity = new ClaimsIdentity(ParseFromClaimsJwt(authToken), "jwt");
-                    _httpClient.DefaultRequestHeaders.Authorization =
+                    _http.DefaultRequestHeaders.Authorization =
                         new AuthenticationHeaderValue("Bearer", authToken.Replace("\"", ""));
                 }
                 catch
                 {
-                    _localStorageService.RemoveItemAsync("authToken");
+                    await _localStorageService.RemoveItemAsync("authToken");
                     identity = new ClaimsIdentity();
                 }
 
