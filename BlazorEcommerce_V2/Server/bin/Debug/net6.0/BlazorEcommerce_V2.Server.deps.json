@@ -65,6 +65,12 @@
         }
       },
       "Microsoft.AspNetCore.Components.Analyzers/6.0.22": {},
+      "Microsoft.AspNetCore.Components.Authorization/6.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Authorization": "6.0.22",
+          "Microsoft.AspNetCore.Components": "6.0.22"
+        }
+      },
       "Microsoft.AspNetCore.Components.Forms/6.0.22": {
         "dependencies": {
           "Microsoft.AspNetCore.Components": "6.0.22"
@@ -664,6 +670,7 @@
         "dependencies": {
           "BlazorEcommerce_V2.Shared": "1.0.0",
           "Blazored.LocalStorage": "4.1.5",
+          "Microsoft.AspNetCore.Components.Authorization": "6.0.0",
           "Microsoft.AspNetCore.Components.WebAssembly": "6.0.22"
         },
         "runtime": {
@@ -717,6 +724,13 @@
       "sha512": "sha512-qiYdtkjjWomAfMgV95IeLFwHnHSxhxyGWRO/vBIIsTe4AjDQSbi6pwLWwKGZh0V1EGiYeBApTJE2x2YM1ueuJQ==",
       "path": "microsoft.aspnetcore.components.analyzers/6.0.22",
       "hashPath": "microsoft.aspnetcore.components.analyzers.6.0.22.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Components.Authorization/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AdrLj0S71GgcGUm7MMzwjzpkmAO044nFhzmvT+x/acB0HNyolWo6jMZBXxEm93iQDSeFlfRQGsw+bD+6mdMhYg==",
+      "path": "microsoft.aspnetcore.components.authorization/6.0.0",
+      "hashPath": "microsoft.aspnetcore.components.authorization.6.0.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Components.Forms/6.0.22": {
       "type": "package",
