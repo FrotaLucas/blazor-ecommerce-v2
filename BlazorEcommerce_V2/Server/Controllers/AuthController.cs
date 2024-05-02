@@ -1,4 +1,5 @@
 ﻿using BlazorEcommerce_V2.Server.Services.AuthService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -44,5 +45,12 @@ namespace BlazorEcommerce_V2.Server.Controllers
 
             return(response);
         }
+
+        //[HttpPost("change-password"), Authorize]
+        ///testar usar context.User.FindFirstValue(ClaimTypes.NameIdentifier) !!!!!!!!!!
+        //public async Task<ActionResult<ServiceResponse<bool>>> ChangePassword([FromBody] bool changePassword)
+        //{
+
+        //}
     }
 }
