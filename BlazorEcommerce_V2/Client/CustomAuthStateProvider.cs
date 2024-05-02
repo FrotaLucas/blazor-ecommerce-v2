@@ -28,6 +28,7 @@ namespace BlazorEcommerce_V2.Client
                 try
                 {
                     identity = new ClaimsIdentity(ParseFromClaimsJwt(authToken), "jwt");
+                    //Header Auhorization nao esta sendo adcionada na api Login!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                     _http.DefaultRequestHeaders.Authorization =
                         new AuthenticationHeaderValue("Bearer", authToken.Replace("\"", ""));
                 }

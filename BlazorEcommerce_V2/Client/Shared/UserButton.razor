@@ -1,6 +1,6 @@
 ﻿@inject ILocalStorageService LocalStorageService
 @inject AuthenticationStateProvider AuthenticationStateProvider
-@inject NavigationManager NagivationManager
+@inject NavigationManager NavigationManager
 
 
 <div class="dropdown">
@@ -15,7 +15,9 @@
                 <button class="dropdown-item" @onclick="Logout">Logout</button>
             </Authorized>
             <NotAuthorized>
-                <a href="/login" class="dropdown-item">Login</a>
+                <a href="login?returnUrl=@NavigationManager.ToBaseRelativePath(NavigationManager.Uri)" class="dropdown-item">
+                    Login
+                </a>
                 <a href="/register" class="dropdown-item">Register</a>
             </NotAuthorized>
         </AuthorizeView>
@@ -43,6 +45,11 @@
     {
         await LocalStorageService.RemoveItemAsync("authToken");
         await AuthenticationStateProvider.GetAuthenticationStateAsync();
-        NagivationManager.NavigateTo("");
+        NavigationManager.NavigateTo("");
     }
+
+    
+
+
+
 }

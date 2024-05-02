@@ -15,6 +15,7 @@
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-vGjzLwdSISfOksMigR3ix03Gnm9NizMNeSDsMra2OjE=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-q4nXeSmlyQjwdHuMcEzGBMAF8ZYsGzld882CXOA8bcA=",
       "Microsoft.AspNetCore.Metadata.dll": "sha256-fEXGX2NluRSJ1+zxexb\/iOsXFAWBtlK+OXY1nqMZUS4=",
+      "Microsoft.AspNetCore.WebUtilities.dll": "sha256-5XrjBgI0E1IeRIaoN1Ps9eixDrabLChuW6oupt2gN0c=",
       "Microsoft.Extensions.Configuration.dll": "sha256-c8yYhfrOBLEnOBglLTu9peXSbJDwFpuT4UQiXSv28Og=",
       "Microsoft.Extensions.Configuration.Abstractions.dll": "sha256-5Otet+KKVUjNkE\/hqcNWmt75H1K2VNuKPFagpRd6Ces=",
       "Microsoft.Extensions.Configuration.Binder.dll": "sha256-wNKhG3Ovx8jqxbscz2AALlsTLfI6GL2dyDhe63mSsoM=",
@@ -31,6 +32,7 @@
       "Microsoft.Extensions.Primitives.dll": "sha256-jOmoWSfsdQexH\/6QCA56gR1RMEqeix2iDDUBWbpAOQI=",
       "Microsoft.JSInterop.dll": "sha256-fSICpNhlQ288OuSJe775VgTmHvKlSX\/1g8FSYCuWb80=",
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-FrkWWHdL\/KuEKd9AZdEOavoVpsuQrfJkb\/V2155Eplg=",
+      "Microsoft.Net.Http.Headers.dll": "sha256-01ToFvbB7cz6evBY6ICnWW7Tv8EiTZxMPXtdyLk81Qk=",
       "System.IO.Pipelines.dll": "sha256-6+E55JXedimdw1c1bDtVg4K7XuWjVWVTifH8QpfzXSY=",
       "Microsoft.CSharp.dll": "sha256-u5aF\/IGf40ulg6wsWB8\/Gj+C5NvuZNaAHhWoQq03H7w=",
       "Microsoft.VisualBasic.Core.dll": "sha256-T43ScCOQZWgw9qE\/jTPKSHqtbbwPtvvyBWkOzHkhQCw=",
@@ -199,14 +201,14 @@
       "netstandard.dll": "sha256-87jtKWKXMg3nXj8D1mLQabI+cTWOPvy5ll3sBYj\/ZhI=",
       "System.Private.CoreLib.dll": "sha256-gjd6M5pA\/nOZEI8pvs9SPUAFG1Jppwr9Xl6v7Wab8Fc=",
       "BlazorEcommerce_V2.Shared.dll": "sha256-ju2PQQkeYfmQS5+wu3Sagkm2+COkKpBFbaapkptUeLw=",
-      "BlazorEcommerce_V2.Client.dll": "sha256-lVOPcRgJw9U+m17Atx8dO5uZEXQvV6ygOIUO4QaUE5w="
+      "BlazorEcommerce_V2.Client.dll": "sha256-wPTetnYUflnV0n9Sqs\/\/vKE\/wxedIdkkkXTzfJHNGXY="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
       "BlazorEcommerce_V2.Shared.pdb": "sha256-9gN5Z5ZqfZ0J7gVBJsDf3ZrueYu6G\/v9DDcNaI7NEYY=",
-      "BlazorEcommerce_V2.Client.pdb": "sha256-glJw\/HLOeAgcGVHp+yAPptbQGlSVxWlTqSfhsiVUCGI="
+      "BlazorEcommerce_V2.Client.pdb": "sha256-ahPbm88+SoZQZvKVEDpKooVWf57TeBywuyb5R3j4IBg="
     },
     "runtime": {
       "dotnet.6.0.23.ga2cchjcoa.js": "sha256-YYG9NE7FnTlr1qMbQzBTzUGZOcLX64xP2Z1+An1jT6U=",

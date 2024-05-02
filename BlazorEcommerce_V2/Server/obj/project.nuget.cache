@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "c4i7evFdOrtvinQ6kA5v6OVcVFnX/9e1nv4DC8qwlU5eRx9trdDm9qVoDp/p8AgLkqEgDsgJvBSRvYHoxMQtFw==",
+  "dgSpecHash": "sEfTW5m6gSlSjU58JvsBjDvzWNm4U3ouGb3MNg1RnnMlkYtTBgndAc9k/O96x2imAo2gtjO9SDode+v24XaHNA==",
   "success": true,
   "projectFilePath": "D:\\Projects_Visual_Studio\\BlazorEcommerce_V2\\BlazorEcommerce_V2\\Server\\BlazorEcommerce_V2.Server.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\6.0.22\\microsoft.aspnetcore.components.webassembly.6.0.22.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.server\\6.0.22\\microsoft.aspnetcore.components.webassembly.server.6.0.22.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.aspnetcore.metadata\\6.0.22\\microsoft.aspnetcore.metadata.6.0.22.nupkg.sha512",
+    "C:\\Users\\lucas\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.1.1\\microsoft.aspnetcore.webutilities.2.1.1.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
@@ -49,6 +50,7 @@
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.8.0\\microsoft.identitymodel.tokens.6.8.0.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.jsinterop\\6.0.22\\microsoft.jsinterop.6.0.22.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.jsinterop.webassembly\\6.0.22\\microsoft.jsinterop.webassembly.6.0.22.nupkg.sha512",
+    "C:\\Users\\lucas\\.nuget\\packages\\microsoft.net.http.headers\\2.1.1\\microsoft.net.http.headers.2.1.1.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
@@ -57,6 +59,7 @@
     "C:\\Users\\lucas\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
+    "C:\\Users\\lucas\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",

@@ -1,4 +1,5 @@
 ﻿@page "/login"
+@using Microsoft.AspNetCore.WebUtilities;
 @inject IAuthService AuthService
 @inject ILocalStorageService LocalStorage
 @inject NavigationManager NavigationManager
@@ -35,6 +36,18 @@
     UserLogin user = new UserLogin();
     string errorMessage = string.Empty;
 
+    private string returnUrl = string.Empty;
+
+    protected override void OnInitialized()
+    {
+        var uri = NavigationManager.ToAbsoluteUri(NavigationManager.Uri);
+
+        if(QueryHelpers.ParseQuery(uri.Query).TryGetValue("returnUrl", out var url )  )
+        {
+            returnUrl = url;
+        }
+    }
+
     private async Task HandleLogin()
     {
         var result = await AuthService.Login(user);
@@ -44,7 +57,8 @@
             await LocalStorage.SetItemAsStringAsync("authToken", result.Data);
             //pq AuthenticationStateProvider e nao a minha classe CustomAuthStateProvider
             await AuthenticationStateProvider.GetAuthenticationStateAsync();
-            NavigationManager.NavigateTo("");
+
+            NavigationManager.NavigateTo(returnUrl);
         }
         else
         {

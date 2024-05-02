@@ -288,7 +288,7 @@
                       {
                           ProductId = 10,
                           ProductTypeId = 8,
-                          Price = 159.99m,
+                          Price = 15.99m,
                           OriginalPrice = 89m
                       },
                       new ProductVariant

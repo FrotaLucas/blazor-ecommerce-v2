@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "u5u/AwkAo53+7L4jgaY1+ZiOyPVU9sPcG4nblm/FAkBw60k8sXRIkuoQ+llcwTdANPAJ6l7gVvveETKIFLMLuw==",
+  "dgSpecHash": "DTBa1zZoXSHGUCnV9DEI8yMz3M29Em33bdHABsvYjCRW68NChe2fwvuS2ZYaQ6yU9FUMeuGPhrBAHvxl/BjL6g==",
   "success": true,
   "projectFilePath": "D:\\Projects_Visual_Studio\\BlazorEcommerce_V2\\BlazorEcommerce_V2\\Client\\BlazorEcommerce_V2.Client.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,7 @@
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\6.0.22\\microsoft.aspnetcore.components.webassembly.6.0.22.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.devserver\\6.0.22\\microsoft.aspnetcore.components.webassembly.devserver.6.0.22.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.aspnetcore.metadata\\6.0.22\\microsoft.aspnetcore.metadata.6.0.22.nupkg.sha512",
+    "C:\\Users\\lucas\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.1.1\\microsoft.aspnetcore.webutilities.2.1.1.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.0\\microsoft.extensions.configuration.6.0.0.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.extensions.configuration.binder\\6.0.0\\microsoft.extensions.configuration.binder.6.0.0.nupkg.sha512",
@@ -30,6 +31,8 @@
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.jsinterop\\6.0.22\\microsoft.jsinterop.6.0.22.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.jsinterop.webassembly\\6.0.22\\microsoft.jsinterop.webassembly.6.0.22.nupkg.sha512",
+    "C:\\Users\\lucas\\.nuget\\packages\\microsoft.net.http.headers\\2.1.1\\microsoft.net.http.headers.2.1.1.nupkg.sha512",
+    "C:\\Users\\lucas\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\system.io.pipelines\\6.0.3\\system.io.pipelines.6.0.3.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",

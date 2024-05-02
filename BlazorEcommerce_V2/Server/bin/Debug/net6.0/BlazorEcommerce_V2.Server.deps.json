@@ -128,6 +128,12 @@
           }
         }
       },
+      "Microsoft.AspNetCore.WebUtilities/2.1.1": {
+        "dependencies": {
+          "Microsoft.Net.Http.Headers": "2.1.1",
+          "System.Text.Encodings.Web": "6.0.0"
+        }
+      },
       "Microsoft.CSharp/4.5.0": {},
       "Microsoft.Data.SqlClient/2.1.4": {
         "dependencies": {
@@ -435,6 +441,12 @@
           }
         }
       },
+      "Microsoft.Net.Http.Headers/2.1.1": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "6.0.0",
+          "System.Buffers": "4.5.0"
+        }
+      },
       "Microsoft.NETCore.Platforms/3.1.0": {},
       "Microsoft.OpenApi/1.2.3": {
         "runtime": {
@@ -507,6 +519,7 @@
           }
         }
       },
+      "System.Buffers/4.5.0": {},
       "System.Collections.Immutable/6.0.0": {
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
@@ -671,7 +684,8 @@
           "BlazorEcommerce_V2.Shared": "1.0.0",
           "Blazored.LocalStorage": "4.1.5",
           "Microsoft.AspNetCore.Components.Authorization": "6.0.0",
-          "Microsoft.AspNetCore.Components.WebAssembly": "6.0.22"
+          "Microsoft.AspNetCore.Components.WebAssembly": "6.0.22",
+          "Microsoft.AspNetCore.WebUtilities": "2.1.1"
         },
         "runtime": {
           "BlazorEcommerce_V2.Client.dll": {}
@@ -766,6 +780,13 @@
       "sha512": "sha512-BSXsopE/6JPjzkS4LM82b+VfKdFMjwSHxgjQjtRIEvn0tlSRpDKL3WvkCdTG5ooiDES7xso3gu3kt1qg1+cLXg==",
       "path": "microsoft.aspnetcore.metadata/6.0.22",
       "hashPath": "microsoft.aspnetcore.metadata.6.0.22.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.WebUtilities/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PGKIZt4+412Z/XPoSjvYu/QIbTxcAQuEFNoA1Pw8a9mgmO0ZhNBmfaNyhgXFf7Rq62kP0tT/2WXpxdcQhkFUPA==",
+      "path": "microsoft.aspnetcore.webutilities/2.1.1",
+      "hashPath": "microsoft.aspnetcore.webutilities.2.1.1.nupkg.sha512"
     },
     "Microsoft.CSharp/4.5.0": {
       "type": "package",
@@ -1005,6 +1026,13 @@
       "path": "microsoft.jsinterop.webassembly/6.0.22",
       "hashPath": "microsoft.jsinterop.webassembly.6.0.22.nupkg.sha512"
     },
+    "Microsoft.Net.Http.Headers/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lPNIphl8b2EuhOE9dMH6EZDmu7pS882O+HMi5BJNsigxHaWlBrYxZHFZgE18cyaPp6SSZcTkKkuzfjV/RRQKlA==",
+      "path": "microsoft.net.http.headers/2.1.1",
+      "hashPath": "microsoft.net.http.headers.2.1.1.nupkg.sha512"
+    },
     "Microsoft.NETCore.Platforms/3.1.0": {
       "type": "package",
       "serviceable": true,
@@ -1060,6 +1088,13 @@
       "sha512": "sha512-OvbvxX+wL8skxTBttcBsVxdh73Fag4xwqEU2edh4JMn7Ws/xJHnY/JB1e9RoCb6XpDxUF3hD9A0Z1lEUx40Pfw==",
       "path": "swashbuckle.aspnetcore.swaggerui/6.5.0",
       "hashPath": "swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+    },
+    "System.Buffers/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pL2ChpaRRWI/p4LXyy4RgeWlYF2sgfj/pnVMvBqwNFr5cXg7CXNnWZWxrOONLg8VGdFB8oB+EG2Qw4MLgTOe+A==",
+      "path": "system.buffers/4.5.0",
+      "hashPath": "system.buffers.4.5.0.nupkg.sha512"
     },
     "System.Collections.Immutable/6.0.0": {
       "type": "package",
