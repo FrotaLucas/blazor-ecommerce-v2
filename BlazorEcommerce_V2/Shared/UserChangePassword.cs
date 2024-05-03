@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BlazorEcommerce_V2.Shared
 {
-    internal class UserChangePassword
+    public class UserChangePassword
     {
         [Required, StringLength(100, MinimumLength = 6)]
         public string Password { get; set; } = string.Empty;

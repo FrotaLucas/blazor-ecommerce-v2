@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace BlazorEcommerce_V2.Server.Controllers
 {
@@ -46,11 +47,21 @@ namespace BlazorEcommerce_V2.Server.Controllers
             return(response);
         }
 
-        //[HttpPost("change-password"), Authorize]
-        ///testar usar context.User.FindFirstValue(ClaimTypes.NameIdentifier) !!!!!!!!!!
-        //public async Task<ActionResult<ServiceResponse<bool>>> ChangePassword([FromBody] bool changePassword)
-        //{
+        [HttpPost("change-password"), Authorize]
+        public async Task<ActionResult<ServiceResponse<bool>>> ChangePassword([FromBody] string changePassword)
+        {
+            //tentar usar context.User como feito no client para acessar user. Tb pode usar HttpContext.User
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var response = await _authService.ChangePassword(int.Parse(userId), changePassword);
 
-        //}
+            if(!response.Success)
+            {
+                return BadRequest(response);
+            }
+
+
+            return Ok(response);
+        }
+
     }
 }

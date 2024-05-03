@@ -847,6 +847,7 @@ D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Web.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Components.WebAssembly.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Metadata.dll
+D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.WebUtilities.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.CSharp.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.Configuration.Abstractions.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.Configuration.Binder.dll
@@ -864,6 +865,7 @@ D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.Primitives.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.JSInterop.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.JSInterop.WebAssembly.dll
+D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Net.Http.Headers.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.VisualBasic.Core.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.VisualBasic.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Win32.Primitives.dll
@@ -1056,6 +1058,7 @@ D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\System.Net.NetworkInformation.dll.gz
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\System.Drawing.dll.gz
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\icudt_CJK.dat.gz
+D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Net.Http.Headers.dll.gz
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\System.Globalization.dll.gz
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.FileProviders.Abstractions.dll.gz
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\System.Security.Principal.Windows.dll.gz
@@ -1071,6 +1074,7 @@ D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\System.Data.DataSetExtensions.dll.gz
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\System.Threading.dll.gz
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\System.Linq.Queryable.dll.gz
+D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.WebUtilities.dll.gz
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\System.Runtime.InteropServices.dll.gz
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\dotnet.6.0.23.ga2cchjcoa.js.gz
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\System.Net.Security.dll.gz
@@ -1244,6 +1248,7 @@ D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Web.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\Microsoft.AspNetCore.Components.WebAssembly.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\Microsoft.AspNetCore.Metadata.dll
+D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\Microsoft.AspNetCore.WebUtilities.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Binder.dll
@@ -1260,6 +1265,7 @@ D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\Microsoft.JSInterop.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\Microsoft.JSInterop.WebAssembly.dll
+D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\Microsoft.Net.Http.Headers.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\System.IO.Pipelines.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\Microsoft.CSharp.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\Microsoft.VisualBasic.Core.dll
@@ -1450,6 +1456,7 @@ D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\build-gz\k4aAq2p4.gz
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\build-gz\gPjQrWXN.gz
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\build-gz\UQs6AbQj.gz
+D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\build-gz\abhEbTk3.gz
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\build-gz\roSW3+n2.gz
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\build-gz\RUjDVSIJ.gz
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\build-gz\eKRfuQK+.gz
@@ -1466,6 +1473,7 @@ D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\build-gz\+Q21dzD+.gz
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\build-gz\w5W+P1WO.gz
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\build-gz\Ki8g0Hjp.gz
+D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\build-gz\5yJ7hlqJ.gz
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\build-gz\dmTrkLHs.gz
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\build-gz\DyceWvTi.gz
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\build-gz\cMWZG+Aw.gz
@@ -1670,11 +1678,3 @@ D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\refint\BlazorEcommerce_V2.Client.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\BlazorEcommerce_V2.Client.pdb
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\ref\BlazorEcommerce_V2.Client.dll
-D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.WebUtilities.dll
-D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Net.Http.Headers.dll
-D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Net.Http.Headers.dll.gz
-D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.WebUtilities.dll.gz
-D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\Microsoft.AspNetCore.WebUtilities.dll
-D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\bin\Debug\net6.0\Microsoft.Net.Http.Headers.dll
-D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\build-gz\abhEbTk3.gz
-D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\build-gz\5yJ7hlqJ.gz

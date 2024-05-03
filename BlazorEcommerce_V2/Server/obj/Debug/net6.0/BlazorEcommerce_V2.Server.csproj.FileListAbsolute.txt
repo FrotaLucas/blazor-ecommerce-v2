@@ -68,6 +68,7 @@ D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Server\bin\Debug
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Server\bin\Debug\net6.0\BlazorEcommerce_V2.Server.pdb
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Server\bin\Debug\net6.0\Blazored.LocalStorage.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Server\bin\Debug\net6.0\Humanizer.dll
+D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Server\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Server\bin\Debug\net6.0\Microsoft.AspNetCore.Authorization.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Server\bin\Debug\net6.0\Microsoft.AspNetCore.Components.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Server\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Forms.dll
@@ -143,4 +144,3 @@ D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Server\obj\Debug
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Server\obj\Debug\net6.0\BlazorEcommerce_V2.Server.pdb
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Server\obj\Debug\net6.0\BlazorEcommerce_V2.Server.genruntimeconfig.cache
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Server\obj\Debug\net6.0\ref\BlazorEcommerce_V2.Server.dll
-D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Server\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

@@ -120,7 +120,7 @@ namespace BlazorEcommerce_V2.Server.Services.AuthService
             return jwt;
         }
 
-        public async Task<ServiceResponse<bool>> ChangePassword(int userId, string password)
+        public async Task<ServiceResponse<bool>> ChangePassword(int userId, string newPassword)
         {
             var user = await _context.Users.FindAsync(userId);
 
@@ -133,7 +133,7 @@ namespace BlazorEcommerce_V2.Server.Services.AuthService
                 };
             }
 
-            CreatePasswordHash(password, out byte[] passwordHash, out byte[] passwordSalt);
+            CreatePasswordHash(newPassword, out byte[] passwordHash, out byte[] passwordSalt);
 
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
