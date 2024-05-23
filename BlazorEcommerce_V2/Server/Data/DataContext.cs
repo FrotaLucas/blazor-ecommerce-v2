@@ -10,6 +10,8 @@
         //PQ TEM QUE SER PROTECTED OVERRIDE AQUI?????
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<CartItem>().HasKey(ci => new {ci.UserId, ci.ProductId, ci.ProducTypetId});
+
             modelBuilder.Entity<ProductVariant>().HasKey(p => new {p.ProductId, p.ProductTypeId});
 
             modelBuilder.Entity<ProductType>().HasData(
@@ -326,5 +328,6 @@
         public DbSet<ProductType> ProductType { get; set; }
         public DbSet<ProductVariant> ProductVariant { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<CartItem> CartItems { get; set; }
     }
 }

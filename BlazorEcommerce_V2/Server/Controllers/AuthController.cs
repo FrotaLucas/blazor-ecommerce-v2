@@ -35,7 +35,7 @@ namespace BlazorEcommerce_V2.Server.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<ServiceResponse<string>>> Login( UserLogin request)
+        public async Task<ActionResult<ServiceResponse<string>>> Login(UserLogin request)
         {
             var response = await _authService.Login(
                 request.Email, request.Password);
@@ -47,6 +47,7 @@ namespace BlazorEcommerce_V2.Server.Controllers
             return(response);
         }
 
+        //Pq somente essa api precisa da declaracao [FromBodyRequest] ??
         [HttpPost("change-password"), Authorize]
         public async Task<ActionResult<ServiceResponse<bool>>> ChangePassword([FromBody] string changePassword)
         {
