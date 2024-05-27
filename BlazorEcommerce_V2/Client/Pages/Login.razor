@@ -4,6 +4,7 @@
 @inject ILocalStorageService LocalStorage
 @inject NavigationManager NavigationManager
 @inject AuthenticationStateProvider AuthenticationStateProvider;
+@inject ICartService CartService
 
 <PageTitle>Login</PageTitle>
 
@@ -57,7 +58,7 @@
             await LocalStorage.SetItemAsStringAsync("authToken", result.Data);
             //pq AuthenticationStateProvider e nao a minha classe CustomAuthStateProvider
             await AuthenticationStateProvider.GetAuthenticationStateAsync();
-
+            await CartService.StoreCartItems(true);
             NavigationManager.NavigateTo(returnUrl);
         }
         else

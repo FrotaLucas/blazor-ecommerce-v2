@@ -7,26 +7,44 @@ namespace BlazorEcommerce_V2.Client.Services.CartService
     {
         private readonly ILocalStorageService _localStorage;
         private readonly HttpClient _http;
-        public CartService(ILocalStorageService localStorage, HttpClient http)
+        private readonly AuthenticationStateProvider _authenticationStateProvider;
+
+        public CartService(ILocalStorageService localStorage, HttpClient http, AuthenticationStateProvider authenticationStateProvider)
         {
             _localStorage = localStorage;   
             _http = http;
+            _authenticationStateProvider = authenticationStateProvider;
         }
         public event Action OnChange;
+        private async Task<bool> IsUserAuthenticated()
+        {
+            return (await _authenticationStateProvider.GetAuthenticationStateAsync()).User.Identity.IsAuthenticated;
+        }
 
         public async Task AddToCart(CartItem cartItem)
         {
+            if (await IsUserAuthenticated())
+            {
+                Console.WriteLine("User is authenticated");
+            }
+            else
+            {
+                Console.WriteLine("User is NOT authenticated");
+
+            }
+
+
             var cart = await _localStorage.GetItemAsync<List<CartItem>>("cart");
 
-            if(cart == null)
+            if (cart == null)
             {
                 cart = new List<CartItem>();
             }
 
-            var sameItem = cart.Find(x=> x.ProductId == cartItem.ProductId &&
+            var sameItem = cart.Find(x => x.ProductId == cartItem.ProductId &&
             x.ProducTypetId == cartItem.ProducTypetId);
 
-            if(sameItem == null)
+            if (sameItem == null)
             {
                 cart.Add(cartItem);
             }
@@ -37,11 +55,13 @@ namespace BlazorEcommerce_V2.Client.Services.CartService
             }
 
             await _localStorage.SetItemAsync("cart", cart);
-            OnChange.Invoke();
+            await GetCartItemsCount();
         }
+
 
         public async Task<List<CartItem>> GetCartItems()
         {
+            await GetCartItemsCount();
             var cart = await _localStorage.GetItemAsync<List<CartItem>>("cart");
 
             if (cart == null)
@@ -50,7 +70,7 @@ namespace BlazorEcommerce_V2.Client.Services.CartService
             }
             return cart;
         }
-
+        //busca no banco de dados infos como preco e Product Type para expor no componente Cart.razor 
         public async Task<List<CartProductResponse>> GetCartProducts()
         {
             var cartItems = await _localStorage.GetItemAsync<List<CartItem>>("cart");
@@ -76,10 +96,25 @@ namespace BlazorEcommerce_V2.Client.Services.CartService
             {
                 cart.Remove(cartItem); 
                 await _localStorage.SetItemAsync("cart", cart);
-                //pq precisa do Onchange aqui?
-                OnChange.Invoke();
+                await GetCartItemsCount();
             }
         }
+        //salva no banco de dados a lista de produtos
+        public async Task StoreCartItems(bool emptyLocalCart = false)
+        {
+            var localCart = await _localStorage.GetItemAsync<List<CartItem>>("cart");
+
+            if (localCart == null)
+                return;
+
+            await _http.PostAsJsonAsync("api/cart", localCart);
+
+            if(emptyLocalCart)
+            {
+                await _localStorage.RemoveItemAsync("cart");
+            }
+        }
+
         //essa funcao tem return ?
         public async Task UpdateQuantity(CartProductResponse product)
         {
@@ -100,6 +135,28 @@ namespace BlazorEcommerce_V2.Client.Services.CartService
                 //pq precisa desse _localStorage aqui ?
                 await _localStorage.SetItemAsync("cart", cart);
             }
+        }
+
+        //extrai do banco de dados os items de carrinho, conta quantos tem e salva no localSotorage em cartItemsCount.
+        //Descobre o Id do User usando o HttpContext
+        public async Task GetCartItemsCount()
+        {
+            //todos os metodos dessa classe precisam chamar o GetCartItemsCount pq ele tem o INVOKE que atualiza
+            //tudo.
+
+            if (await IsUserAuthenticated())
+            {
+                var cartItems = await _http.GetFromJsonAsync<ServiceResponse<int>>("api/cart/count");
+                var count = cartItems.Data;
+                _localStorage.SetItemAsync<int>("cartItemsCount", count);
+            }
+            else
+            {
+                var cartCount = await _localStorage.GetItemAsync<List<CartItem>>("cart");
+                await _localStorage.SetItemAsync<int>("cartItemsCount", cartCount != null ? cartCount.Count : 0);
+            }
+          
+            OnChange.Invoke();
         }
     }
 }

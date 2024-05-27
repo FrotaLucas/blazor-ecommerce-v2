@@ -1,6 +1,8 @@
-﻿using BlazorEcommerce_V2.Server.Services.CartService;
+﻿using BlazorEcommerce_V2.Server.Migrations;
+using BlazorEcommerce_V2.Server.Services.CartService;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace BlazorEcommerce_V2.Server.Controllers
 {
@@ -21,6 +23,23 @@ namespace BlazorEcommerce_V2.Server.Controllers
 
             return Ok(result);
         }
+
+        //only for authorized users. So that I can use USer method
+        [HttpPost]
+        public async Task<ActionResult<ServiceResponse<List<CartProductResponse>>>> StorageStoreCartItems(List<CartItem> cartItems)
+        {
+            //nao precisa mais pegar o UserId usando o User, pq isso esta sendo feito com o HttpContext no CartService
+           // var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            var result = await _cartService.StoreCartItems(cartItems);
+            return Ok(result);
+        }
+
+        [HttpGet("count")]
+        public async Task<ActionResult<ServiceResponse<int>>> GetCartItemsCount()
+        {
+            return await _cartService.GetCartItemsCount();    
+        }
+
     }
 }
     

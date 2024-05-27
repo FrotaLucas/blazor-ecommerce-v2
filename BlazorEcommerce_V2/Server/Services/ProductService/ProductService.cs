@@ -21,11 +21,13 @@
         public async Task<ServiceResponse<Product>> GetProductAsync(int productId)
             {
                 var response = new ServiceResponse<Product>();
-                var product = await _context.Products.Include(p=> p.Variants).
-                ThenInclude(v => v.ProductType).FirstOrDefaultAsync(p=> p.Id == productId);
-                //var product = await _context.Products.FindAsync(productId);
+            //op1
+            var product = await _context.Products.Include(p => p.Variants).
+            ThenInclude(v => v.ProductType).FirstOrDefaultAsync(p => p.Id == productId);
 
-                if (product == null)
+            //op2
+            //var product = await _context.Products.FirstOrDefaultAsync(p => p.Id == productId);
+            if (product == null)
                 {
                     response.Success = false;
                     response.Message = "Sorry, but this product does not exist.";

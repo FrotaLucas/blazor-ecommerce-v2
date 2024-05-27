@@ -29,16 +29,17 @@ namespace BlazorEcommerce_V2.Client
                 {
                     identity = new ClaimsIdentity(ParseFromClaimsJwt(authToken), "jwt");
                     //Header Auhorization nao esta sendo adcionada na api Login!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                    //Console.WriteLine(authToken);
+                    
                     _http.DefaultRequestHeaders.Authorization =
-                        new AuthenticationHeaderValue("Bearer", authToken.Replace("\"", ""));
+                       new AuthenticationHeaderValue("Bearer", authToken.Replace("\"", ""));
+                    Console.WriteLine(_http.DefaultRequestHeaders.Authorization.Parameter);
                 }
                 catch
                 {
                     await _localStorageService.RemoveItemAsync("authToken");
                     identity = new ClaimsIdentity();
                 }
-
-
             }
 
             var user = new ClaimsPrincipal(identity);
