@@ -59,26 +59,42 @@ namespace BlazorEcommerce_V2.Client.Services.CartService
         }
 
 
-        public async Task<List<CartItem>> GetCartItems()
-        {
-            await GetCartItemsCount();
-            var cart = await _localStorage.GetItemAsync<List<CartItem>>("cart");
+        //public async Task<List<CartItem>> GetCartItems()
+        //{
+        //    await GetCartItemsCount();
+        //    var cart = await _localStorage.GetItemAsync<List<CartItem>>("cart");
 
-            if (cart == null)
-            {
-                cart = new List<CartItem>();
-            }
-            return cart;
-        }
+        //    if (cart == null)
+        //    {
+        //        cart = new List<CartItem>();
+        //    }
+        //    return cart;
+        //}
+
+
         //busca no banco de dados infos como preco e Product Type para expor no componente Cart.razor 
         public async Task<List<CartProductResponse>> GetCartProducts()
         {
-            var cartItems = await _localStorage.GetItemAsync<List<CartItem>>("cart");
-            //estou uando esse metodo pq a api eh do tipo Post
-            var response = await _http.PostAsJsonAsync("api/cart/products", cartItems);
-            var cartProducts = await response.Content.ReadFromJsonAsync<ServiceResponse<List<CartProductResponse>>>();
+            //As APIs api/cart e a api/cart/products fazem a mesma coisa. Elas entregam uma lista de CartProductResponse.
+            //a diferenca eh que api/cart usa o Id do usuario por baixo dos panos, ja a outra nao.
+            if (await IsUserAuthenticated())
+            {
+                var responsee = await _http.GetFromJsonAsync<ServiceResponse<List<CartProductResponse>>>("api/cart");
+                return responsee.Data;
+            }
+            else
+            {
+                var cartItems = await _localStorage.GetItemAsync<List<CartItem>>("cart");
+                if (cartItems == null)
+                {
+                    return new List<CartProductResponse>();
+                }
+                //estou uando esse metodo pq a api eh do tipo Post
+                var response = await _http.PostAsJsonAsync("api/cart/products", cartItems);
+                var cartProducts = await response.Content.ReadFromJsonAsync<ServiceResponse<List<CartProductResponse>>>();
 
-            return cartProducts.Data;
+                return cartProducts.Data;
+            }
         }
 
         public async Task RemoveProductFromCart(int productId, int productTypeId)

@@ -16,7 +16,9 @@ namespace BlazorEcommerce_V2.Server.Controllers
             _cartService = cartService;
         }
 
-        [HttpPost("products")]
+        //esse metodo nao poderia ser um get tambem ao inves de ser post??
+        //ele precisa ser post pq tem que entregar um parametro obrigatorio cartItems?
+        [HttpPost("products")] 
         public async Task<ActionResult<ServiceResponse<List<CartProductResponse>>>> GetCartProducts(List<CartItem> cartItems)
         {
             var result = await _cartService.GetCartProducts(cartItems);
@@ -38,6 +40,13 @@ namespace BlazorEcommerce_V2.Server.Controllers
         public async Task<ActionResult<ServiceResponse<int>>> GetCartItemsCount()
         {
             return await _cartService.GetCartItemsCount();    
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<ServiceResponse<List<CartProductResponse>>>> GetDbCartProducts()
+        {
+            var result = await _cartService.GetDbCartProducts();
+            return Ok(result);
         }
 
     }
