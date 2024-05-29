@@ -26,51 +26,34 @@ namespace BlazorEcommerce_V2.Client.Services.CartService
             if (await IsUserAuthenticated())
             {
                 Console.WriteLine("User is authenticated");
+                await _http.PostAsJsonAsync("api/cart/add", cartItem);
             }
             else
             {
-                Console.WriteLine("User is NOT authenticated");
+                var cart = await _localStorage.GetItemAsync<List<CartItem>>("cart");
 
+                if (cart == null)
+                {
+                    cart = new List<CartItem>();
+                }
+
+                var sameItem = cart.Find(x => x.ProductId == cartItem.ProductId &&
+                x.ProducTypetId == cartItem.ProducTypetId);
+
+                if (sameItem == null)
+                {
+                    cart.Add(cartItem);
+                }
+                else
+                {
+                    //sameItem.Quantity += cartItem.Quantity;
+                    sameItem.Quantity = sameItem.Quantity + 1;
+                }
+                await _localStorage.SetItemAsync("cart", cart);
             }
 
-
-            var cart = await _localStorage.GetItemAsync<List<CartItem>>("cart");
-
-            if (cart == null)
-            {
-                cart = new List<CartItem>();
-            }
-
-            var sameItem = cart.Find(x => x.ProductId == cartItem.ProductId &&
-            x.ProducTypetId == cartItem.ProducTypetId);
-
-            if (sameItem == null)
-            {
-                cart.Add(cartItem);
-            }
-            else
-            {
-                //sameItem.Quantity += cartItem.Quantity;
-                sameItem.Quantity = sameItem.Quantity + 1;
-            }
-
-            await _localStorage.SetItemAsync("cart", cart);
             await GetCartItemsCount();
         }
-
-
-        //public async Task<List<CartItem>> GetCartItems()
-        //{
-        //    await GetCartItemsCount();
-        //    var cart = await _localStorage.GetItemAsync<List<CartItem>>("cart");
-
-        //    if (cart == null)
-        //    {
-        //        cart = new List<CartItem>();
-        //    }
-        //    return cart;
-        //}
-
 
         //busca no banco de dados infos como preco e Product Type para expor no componente Cart.razor 
         public async Task<List<CartProductResponse>> GetCartProducts()
