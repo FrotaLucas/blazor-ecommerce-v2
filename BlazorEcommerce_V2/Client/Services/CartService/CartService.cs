@@ -102,6 +102,9 @@ namespace BlazorEcommerce_V2.Client.Services.CartService
         //salva no banco de dados a lista de produtos
         public async Task StoreCartItems(bool emptyLocalCart = false)
         {
+            //nao deveria aqui ser cartItemsCount ao inves de cart ? Quando Login.razor eh chamado o usuario
+            //esta autenticado e por conseguencia deveria salvar itens personalizados do carrinho no cartItemsCount 
+            //???????????????????????
             var localCart = await _localStorage.GetItemAsync<List<CartItem>>("cart");
 
             if (localCart == null)
@@ -129,8 +132,8 @@ namespace BlazorEcommerce_V2.Client.Services.CartService
             && x.ProducTypetId == product.ProductTypeId);
 
             if (cartItem != null)
-            {   //NAO ENTENDI ISSO AQUI DE ATUALIZAR cartItem. Ao mudar item cartItem que pertence a lista.
-                //automaticamente a lista cart eh atualiza
+            {   //Interessante. Ao mudar item cartItem que pertence a lista.
+                //automaticamente a lista cart eh atualizada
                 cartItem.Quantity = product.Quantity;
                 //pq precisa desse _localStorage aqui ?
                 await _localStorage.SetItemAsync("cart", cart);
@@ -148,7 +151,7 @@ namespace BlazorEcommerce_V2.Client.Services.CartService
             {
                 var cartItems = await _http.GetFromJsonAsync<ServiceResponse<int>>("api/cart/count");
                 var count = cartItems.Data;
-                _localStorage.SetItemAsync<int>("cartItemsCount", count);
+                await _localStorage.SetItemAsync<int>("cartItemsCount", count);
             }
             else
             {

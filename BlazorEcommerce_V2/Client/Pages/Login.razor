@@ -56,9 +56,13 @@
         if(result.Success)
         {
             await LocalStorage.SetItemAsStringAsync("authToken", result.Data);
-            //pq AuthenticationStateProvider e nao a minha classe CustomAuthStateProvider
+            //pq AuthenticationStateProvider e nao a minha classe CustomAuthStateProvider?resolvido
             await AuthenticationStateProvider.GetAuthenticationStateAsync();
+            //ao fazer login, o que ta salvo em cart deve ser apagado, 
+            //Por isso o true aqui !!
+            //Depois GetCartItemsCount() se encarrega de atualizar cartItemsCount do LocalStorage
             await CartService.StoreCartItems(true);
+            await CartService.GetCartItemsCount();
             NavigationManager.NavigateTo(returnUrl);
         }
         else
