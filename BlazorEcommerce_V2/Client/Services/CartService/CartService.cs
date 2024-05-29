@@ -72,7 +72,8 @@ namespace BlazorEcommerce_V2.Client.Services.CartService
                 {
                     return new List<CartProductResponse>();
                 }
-                //estou uando esse metodo pq a api eh do tipo Post
+                //estou uando esse metodo pq a api eh do tipo Post. Precisava ser
+                //post pra receber o parametro cartItems?
                 var response = await _http.PostAsJsonAsync("api/cart/products", cartItems);
                 var cartProducts = await response.Content.ReadFromJsonAsync<ServiceResponse<List<CartProductResponse>>>();
 
@@ -120,22 +121,36 @@ namespace BlazorEcommerce_V2.Client.Services.CartService
         //essa funcao tem return ?
         public async Task UpdateQuantity(CartProductResponse product)
         {
-            var cart = await _localStorage.GetItemAsync<List<CartItem>>("cart");
-
-            if (cart == null)
+            if(await IsUserAuthenticated())
             {
-                return;
+                var request = new CartItem()
+                {
+                    ProductId = product.ProductId,
+                    ProducTypetId = product.ProductTypeId,
+                    Quantity = product.Quantity
+                };
+                await _http.PutAsJsonAsync("api/cart/update-quantity", request);
             }
+            else
+            {
+                var cart = await _localStorage.GetItemAsync<List<CartItem>>("cart");
 
-            var cartItem = cart.Find(x => x.ProductId == product.ProductId
-            && x.ProducTypetId == product.ProductTypeId);
+                if (cart == null)
+                {
+                    return;
+                }
 
-            if (cartItem != null)
-            {   //Interessante. Ao mudar item cartItem que pertence a lista.
-                //automaticamente a lista cart eh atualizada
-                cartItem.Quantity = product.Quantity;
-                //pq precisa desse _localStorage aqui ?
-                await _localStorage.SetItemAsync("cart", cart);
+                var cartItem = cart.Find(x => x.ProductId == product.ProductId
+                && x.ProducTypetId == product.ProductTypeId);
+
+                if (cartItem != null)
+                {   //Interessante. Ao mudar item cartItem que pertence a lista.
+                    //automaticamente a lista cart eh atualizada
+                    cartItem.Quantity = product.Quantity;
+                    //pq precisa desse _localStorage aqui ?
+                    await _localStorage.SetItemAsync("cart", cart);
+                }
+
             }
         }
 

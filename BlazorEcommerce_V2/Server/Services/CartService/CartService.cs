@@ -87,8 +87,9 @@ namespace BlazorEcommerce_V2.Server.Services.CartService
 
         public async Task<ServiceResponse<bool>> AddToCart(CartItem cartItem)
         {
-            //pq o UserId do cartItem esta sendo atualizado com GetUserId() ???
+            //pq o UserId do cartItem esta sendo atualizado com GetUserId() ????????
             //cartItem ja deveria vir com UserId pronto!!!
+            //R: o UserId que vem no parametro cartItem e sempre 0, por isso tem que atualizar
             cartItem.UserId = GetUserId();
 
             var sameItem = await _context.CartItems.FirstOrDefaultAsync(ci => ci.ProductId == cartItem.ProductId &&
@@ -107,5 +108,28 @@ namespace BlazorEcommerce_V2.Server.Services.CartService
             return new ServiceResponse<bool> { Data = true };
         }
 
+        public async Task<ServiceResponse<bool>> UpdateQuantity(CartItem cartItem)
+        {
+            //pq nao podemos usar diretamente o cartItem.UserId ao inves de GetUserId ??
+            //R: o UserId que vem no parametro cartItem e sempre 0, por isso tem que atualizar
+
+            var dbCartItem = await _context.CartItems.FirstOrDefaultAsync(ci => ci.ProductId == cartItem.ProductId &&
+            ci.ProducTypetId == cartItem.ProducTypetId && ci.UserId == GetUserId());
+
+            if( dbCartItem == null )
+            {
+                return new ServiceResponse<bool>
+                {
+                    Data = false,
+                    Success = false,
+                    Message = "Cart item does not exist."
+                };
+            }
+
+            dbCartItem.Quantity = cartItem.Quantity;
+            await _context.SaveChangesAsync();
+
+            return new ServiceResponse<bool> { Data = true };
+        }
     }
 }
