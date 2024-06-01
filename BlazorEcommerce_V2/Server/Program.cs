@@ -5,6 +5,7 @@ using BlazorEcommerce_V2.Server.Services.ProductService;
 using BlazorEcommerce_V2.Server.Services.CategoryService;
 using BlazorEcommerce_V2.Server.Services.CartService;
 using BlazorEcommerce_V2.Server.Services.AuthService;
+using BlazorEcommerce_V2.Server.Services.OrderService;
 
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -30,6 +31,7 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>

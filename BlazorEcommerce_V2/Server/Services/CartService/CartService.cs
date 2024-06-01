@@ -116,7 +116,7 @@ namespace BlazorEcommerce_V2.Server.Services.CartService
             var dbCartItem = await _context.CartItems.FirstOrDefaultAsync(ci => ci.ProductId == cartItem.ProductId &&
             ci.ProducTypetId == cartItem.ProducTypetId && ci.UserId == GetUserId());
 
-            if( dbCartItem == null )
+            if (dbCartItem == null)
             {
                 return new ServiceResponse<bool>
                 {
@@ -134,10 +134,10 @@ namespace BlazorEcommerce_V2.Server.Services.CartService
 
         public async Task<ServiceResponse<bool>> RemoveItemFromCart(int productId, int productTypeId)
         {
-            var dbCartItem = await _context.CartItems.FirstOrDefaultAsync( ci => ci.ProductId == productId && 
-            ci.ProducTypetId ==  productTypeId && ci.UserId == GetUserId());
+            var dbCartItem = await _context.CartItems.FirstOrDefaultAsync(ci => ci.ProductId == productId &&
+            ci.ProducTypetId == productTypeId && ci.UserId == GetUserId());
 
-            if(dbCartItem == null )
+            if (dbCartItem == null)
             {
                 return new ServiceResponse<bool>
                 {
@@ -155,5 +155,6 @@ namespace BlazorEcommerce_V2.Server.Services.CartService
                 Data = true
             };
         }
+
     }
 }
