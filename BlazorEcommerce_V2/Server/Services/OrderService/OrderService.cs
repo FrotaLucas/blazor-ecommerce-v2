@@ -15,10 +15,14 @@ namespace BlazorEcommerce_V2.Server.Services.OrderService
             _httpContextAccessor = httpContextAccessor;
         }
 
-        private int GetUserId() => int.Parse(_httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
+        private int GetUserId() => int.Parse(_httpContextAccessor?.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier));
 
         public async Task<ServiceResponse<bool>> PlaceOrder()
         {
+              
+            
+            Console.WriteLine("UserId" + GetUserId()); 
+
             var products = (await _cartService.GetDbCartProducts()).Data;
             decimal totalPrice = 0;
             products.ForEach(product => totalPrice += product.Price * product.Quantity);
@@ -35,7 +39,9 @@ namespace BlazorEcommerce_V2.Server.Services.OrderService
 
             }));
 
-            //criando uma Order com UsedId e fazendo a conexao com OrderItems
+            //criando uma Order com UsedId e fazendo a conexao com OrderItems. 
+            //Como a conexao estabelecida, ao salvar na tabela Orders, a tabela OrderItems automaticamente
+            //tambem vai ser preenchida!!
             var order = new Order()
             {
                 UserId = GetUserId(),
@@ -44,7 +50,7 @@ namespace BlazorEcommerce_V2.Server.Services.OrderService
                 OrderItems = orderItems
             };
 
-            _context.Orders.AddAsync(order);
+            await _context.Orders.AddAsync(order);
             await _context.SaveChangesAsync();
 
             return new ServiceResponse<bool>

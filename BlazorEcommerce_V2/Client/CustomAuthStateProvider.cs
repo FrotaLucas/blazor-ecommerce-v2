@@ -45,6 +45,8 @@ namespace BlazorEcommerce_V2.Client
             var user = new ClaimsPrincipal(identity);
             var state = new AuthenticationState(user);
 
+            //bool status = state.User.Identity.IsAuthenticated;
+            //bool status = new AuthenticationState(user).User.Identity.IsAuthenticated;
             NotifyAuthenticationStateChanged(Task.FromResult(state));
 
             return state;

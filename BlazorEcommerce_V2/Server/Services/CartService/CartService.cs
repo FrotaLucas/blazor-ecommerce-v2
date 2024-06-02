@@ -14,7 +14,7 @@ namespace BlazorEcommerce_V2.Server.Services.CartService
         }
 
         //nao poderia ser uma variavel comum UserId ao inves de GetUserId()
-        private int GetUserId() => int.Parse(_httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
+        private int GetUserId() => int.Parse(_httpContextAccessor?.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier));
         
         public async Task<ServiceResponse<List<CartProductResponse>>> GetCartProducts(List<CartItem> cartItems)
         {
