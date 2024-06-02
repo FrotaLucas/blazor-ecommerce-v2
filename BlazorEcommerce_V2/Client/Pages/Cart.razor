@@ -42,7 +42,7 @@
                  Total (@cartProducts.Count): $@cartProducts.Sum(@product => @product.Price * product.Quantity)
              </div>
         </div>
-        <button @onclick="PlaceOrder" class="btn alert-success float-right mt-1">Place Order</button>
+        <button @onclick="PlaceOrder" class="btn alert-success float-end mt-1">Place Order</button>
     } 
 
 @code {

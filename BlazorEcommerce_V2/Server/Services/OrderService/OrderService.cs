@@ -51,6 +51,10 @@ namespace BlazorEcommerce_V2.Server.Services.OrderService
             };
 
             await _context.Orders.AddAsync(order);
+
+            _context.CartItems.RemoveRange(_context.CartItems
+                .Where( ci => ci.UserId == GetUserId()));
+
             await _context.SaveChangesAsync();
 
             return new ServiceResponse<bool>
