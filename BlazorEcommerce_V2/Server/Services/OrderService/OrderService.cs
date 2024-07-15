@@ -52,6 +52,7 @@ namespace BlazorEcommerce_V2.Server.Services.OrderService
 
             await _context.Orders.AddAsync(order);
 
+            //depois de fazer pedido, uma ordem eh criada na tabela Orders e o carrinho eh entao deletado da tabela CarttItems
             _context.CartItems.RemoveRange(_context.CartItems
                 .Where( ci => ci.UserId == GetUserId()));
 
