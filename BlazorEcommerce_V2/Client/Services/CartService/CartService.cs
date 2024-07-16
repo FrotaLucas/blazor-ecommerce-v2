@@ -169,6 +169,7 @@ namespace BlazorEcommerce_V2.Client.Services.CartService
 
             if (await IsUserAuthenticated())
             {
+                //essa variavel cartItems eh sempre zero pq a tabela CartItems que essa api chama esta vazia.
                 var cartItems = await _http.GetFromJsonAsync<ServiceResponse<int>>("api/cart/count");
                 var count = cartItems.Data;
                 await _localStorage.SetItemAsync<int>("cartItemsCount", count);

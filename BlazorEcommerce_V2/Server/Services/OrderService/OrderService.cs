@@ -1,4 +1,5 @@
-﻿using BlazorEcommerce_V2.Server.Services.CartService;
+﻿using BlazorEcommerce_V2.Server.Services.AuthService;
+using BlazorEcommerce_V2.Server.Services.CartService;
 using System.Security.Claims;
 
 namespace BlazorEcommerce_V2.Server.Services.OrderService
@@ -6,22 +7,21 @@ namespace BlazorEcommerce_V2.Server.Services.OrderService
     public class OrderService : IOrderService
     {
         public readonly DataContext _context;
-        public readonly IHttpContextAccessor _httpContextAccessor;
         public readonly ICartService _cartService;
-        public OrderService(DataContext context, IHttpContextAccessor httpContextAccessor, ICartService cartService)
+        public readonly IAuthService _authService;
+        public OrderService(DataContext context,ICartService cartService, IAuthService authService)
         {
             _context = context;
             _cartService = cartService;
-            _httpContextAccessor = httpContextAccessor;
+            _authService = authService;
         }
 
-        private int GetUserId() => int.Parse(_httpContextAccessor?.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier));
+        //private int GetUserId() => int.Parse(_httpContextAccessor?.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier));
 
         public async Task<ServiceResponse<bool>> PlaceOrder()
         {
               
-            
-            Console.WriteLine("UserId" + GetUserId()); 
+            Console.WriteLine("UserId" + _authService.GetUserId()); 
 
             var products = (await _cartService.GetDbCartProducts()).Data;
             decimal totalPrice = 0;
@@ -44,7 +44,7 @@ namespace BlazorEcommerce_V2.Server.Services.OrderService
             //tambem vai ser preenchida!!
             var order = new Order()
             {
-                UserId = GetUserId(),
+                UserId = _authService.GetUserId(),
                 OrderDate = DateTime.Now,
                 TotalPrice = totalPrice,
                 OrderItems = orderItems
@@ -54,7 +54,7 @@ namespace BlazorEcommerce_V2.Server.Services.OrderService
 
             //depois de fazer pedido, uma ordem eh criada na tabela Orders e o carrinho eh entao deletado da tabela CarttItems
             _context.CartItems.RemoveRange(_context.CartItems
-                .Where( ci => ci.UserId == GetUserId()));
+                .Where( ci => ci.UserId == _authService.GetUserId()));
 
             await _context.SaveChangesAsync();
 
