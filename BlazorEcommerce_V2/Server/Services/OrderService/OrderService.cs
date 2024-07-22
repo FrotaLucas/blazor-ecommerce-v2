@@ -32,7 +32,7 @@ namespace BlazorEcommerce_V2.Server.Services.OrderService
                 OrderDate = o.OrderDate,
                 TotalPrice = o.TotalPrice,
                 Product = o.OrderItems.Count > 1 ? $"{o.OrderItems.First().Product.Title}" +
-                "and" + $"{o.OrderItems.Count} more" : $"{o.OrderItems.First().Product.Title}",
+                " and " + $"{o.OrderItems.Count} more" : $"{o.OrderItems.First().Product.Title}",
                 ProductImageUrl = o.OrderItems.First().Product.ImageUrl,
 
             }));

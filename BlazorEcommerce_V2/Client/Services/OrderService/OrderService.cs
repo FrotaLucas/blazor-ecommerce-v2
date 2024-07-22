@@ -30,5 +30,12 @@ namespace BlazorEcommerce_V2.Client.Services.OrderService
                 _navigationManager.NavigateTo("login");
             }
         }
+
+        public async Task<List<OrderOverviewResponse>> GetOrders()
+        {
+            var response = await _http.GetFromJsonAsync<ServiceResponse<List<OrderOverviewResponse>>>("api/order");
+
+            return response.Data;
+        }
     }
 }
