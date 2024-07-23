@@ -37,5 +37,11 @@ namespace BlazorEcommerce_V2.Client.Services.OrderService
 
             return response.Data;
         }
+
+        public async Task<OrderDetailsResponse> GetOrderDetails(int orderId)
+        {
+            var response = await _http.GetFromJsonAsync<ServiceResponse<OrderDetailsResponse>>($"api/order/{orderId}");
+            return response.Data;
+        }
     }
 }
