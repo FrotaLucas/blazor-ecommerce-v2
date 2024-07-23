@@ -7,5 +7,7 @@
         Task<ServiceResponse<string>> Login(UserLogin user);
 
         Task<ServiceResponse<bool>> ChangePassword(UserChangePassword request);
+
+        Task<bool> IsAuthenticated();
     }
 }

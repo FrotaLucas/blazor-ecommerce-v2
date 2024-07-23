@@ -7,23 +7,19 @@ namespace BlazorEcommerce_V2.Client.Services.CartService
     {
         private readonly ILocalStorageService _localStorage;
         private readonly HttpClient _http;
-        private readonly AuthenticationStateProvider _authenticationStateProvider;
+        private readonly IAuthService _authService;
 
-        public CartService(ILocalStorageService localStorage, HttpClient http, AuthenticationStateProvider authenticationStateProvider)
+        public CartService(ILocalStorageService localStorage, HttpClient http, IAuthService authService)
         {
             _localStorage = localStorage;   
             _http = http;
-            _authenticationStateProvider = authenticationStateProvider;
+            _authService = authService;
         }
         public event Action OnChange;
-        private async Task<bool> IsUserAuthenticated()
-        {
-            return (await _authenticationStateProvider.GetAuthenticationStateAsync()).User.Identity.IsAuthenticated;
-        }
 
         public async Task AddToCart(CartItem cartItem)
         {
-            if (await IsUserAuthenticated())
+            if (await _authService.IsAuthenticated())
             {
                 Console.WriteLine("User is authenticated");
                 await _http.PostAsJsonAsync("api/cart/add", cartItem);
@@ -60,7 +56,7 @@ namespace BlazorEcommerce_V2.Client.Services.CartService
         {
             //As APIs api/cart e a api/cart/products fazem a mesma coisa. Elas entregam uma lista de CartProductResponse.
             //a diferenca eh que api/cart usa o Id do usuario por baixo dos panos, ja a outra nao.
-            if (await IsUserAuthenticated())
+            if (await _authService.IsAuthenticated())
             {
                 var responsee = await _http.GetFromJsonAsync<ServiceResponse<List<CartProductResponse>>>("api/cart");
                 return responsee.Data;
@@ -83,7 +79,7 @@ namespace BlazorEcommerce_V2.Client.Services.CartService
 
         public async Task RemoveProductFromCart(int productId, int productTypeId)
         {
-            if(await IsUserAuthenticated())
+            if(await _authService.IsAuthenticated())
             {
                 await _http.DeleteAsync($"api/cart/{productId}/{productTypeId}");
             }
@@ -127,7 +123,7 @@ namespace BlazorEcommerce_V2.Client.Services.CartService
         //essa funcao tem return ?
         public async Task UpdateQuantity(CartProductResponse product)
         {
-            if(await IsUserAuthenticated())
+            if(await _authService.IsAuthenticated())
             {
                 var request = new CartItem()
                 {
@@ -167,7 +163,7 @@ namespace BlazorEcommerce_V2.Client.Services.CartService
             //todos os metodos dessa classe precisam chamar o GetCartItemsCount pq ele tem o INVOKE que atualiza
             //tudo.
 
-            if (await IsUserAuthenticated())
+            if (await _authService.IsAuthenticated())
             {
                 //essa variavel cartItems eh sempre zero pq a tabela CartItems que essa api chama esta vazia.
                 var cartItems = await _http.GetFromJsonAsync<ServiceResponse<int>>("api/cart/count");
