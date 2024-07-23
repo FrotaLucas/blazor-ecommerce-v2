@@ -9,11 +9,52 @@ namespace BlazorEcommerce_V2.Server.Services.OrderService
         public readonly DataContext _context;
         public readonly ICartService _cartService;
         public readonly IAuthService _authService;
-        public OrderService(DataContext context,ICartService cartService, IAuthService authService)
+        public OrderService(DataContext context, ICartService cartService, IAuthService authService)
         {
             _context = context;
             _cartService = cartService;
             _authService = authService;
+        }
+
+        public async Task<ServiceResponse<OrderDetailsResponse>> GetOrderDetails(int orderId)
+        {
+            var response = new ServiceResponse<OrderDetailsResponse>();
+
+            var order = await _context.Orders.Include(o => o.OrderItems)
+                .ThenInclude(oi => oi.Product)
+                .Include(o => o.OrderItems)
+                .ThenInclude(oi => oi.ProductType)
+                .Where(o => o.UserId == _authService.GetUserId() && o.Id == orderId)
+                .OrderByDescending(o => o.OrderDate)
+                .FirstOrDefaultAsync();
+            if (order == null)
+            {
+                response.Success = false;
+                response.Message = "Order not found";
+                return response;
+            }
+
+            var orderDetailsResponse = new OrderDetailsResponse()
+            {
+                OrderDate = order.OrderDate,
+                TotalPrice = order.TotalPrice,
+                Products = new List<OrderDetailsProductResponse>()
+            };
+
+            order.OrderItems.ForEach(item => orderDetailsResponse.Products.Add(new OrderDetailsProductResponse
+            {
+                ProductId = item.ProductId,
+                Title = item.Product.Title,
+                ImageUrl = item.Product.ImageUrl,
+                ProductType = item.ProductType.Name,
+                Quantity = item.Quantity,
+                TotalPrice = item.TotalPrice,
+            })
+            );
+
+            response.Data = orderDetailsResponse;
+            return response;
+
         }
 
         public async Task<ServiceResponse<List<OrderOverviewResponse>>> GetOrders()
@@ -46,8 +87,8 @@ namespace BlazorEcommerce_V2.Server.Services.OrderService
 
         public async Task<ServiceResponse<bool>> PlaceOrder()
         {
-              
-            Console.WriteLine("UserId" + _authService.GetUserId()); 
+
+            Console.WriteLine("UserId" + _authService.GetUserId());
 
             var products = (await _cartService.GetDbCartProducts()).Data;
             decimal totalPrice = 0;
@@ -80,7 +121,7 @@ namespace BlazorEcommerce_V2.Server.Services.OrderService
 
             //depois de fazer pedido, uma ordem eh criada na tabela Orders e o carrinho eh entao deletado da tabela CarttItems
             _context.CartItems.RemoveRange(_context.CartItems
-                .Where( ci => ci.UserId == _authService.GetUserId()));
+                .Where(ci => ci.UserId == _authService.GetUserId()));
 
             await _context.SaveChangesAsync();
 
