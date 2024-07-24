@@ -144,3 +144,5 @@ D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Server\obj\Debug
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Server\obj\Debug\net6.0\BlazorEcommerce_V2.Server.pdb
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Server\obj\Debug\net6.0\BlazorEcommerce_V2.Server.genruntimeconfig.cache
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Server\obj\Debug\net6.0\ref\BlazorEcommerce_V2.Server.dll
+D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Server\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Server\bin\Debug\net6.0\Stripe.net.dll

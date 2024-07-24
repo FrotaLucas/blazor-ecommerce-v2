@@ -14,7 +14,8 @@ namespace BlazorEcommerce_V2.Client.Services.OrderService
             _http = httpClient;
 
         }
-
+        //SUSBSTITUIR ESSE METODO IsUserAuthenticated por servico do AuthService !! Injetar AuthService 
+        //por dependencias aqui no construtor dessa classe
         private async Task<bool> IsUserAuthenticated()
         {
             return (await _authStateProvider.GetAuthenticationStateAsync()).User.Identity.IsAuthenticated;
