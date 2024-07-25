@@ -1662,6 +1662,7 @@ D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\staticwebassets.build.json
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\staticwebassets.development.json
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\scopedcss\Pages\Cart.razor.rz.scp.css
+D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\scopedcss\Pages\Orders.razor.rz.scp.css
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\scopedcss\Pages\ProductDetails.razor.rz.scp.css
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\scopedcss\Shared\FeaturedProducts.razor.rz.scp.css
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\scopedcss\Shared\HomeButton.razor.rz.scp.css
@@ -1671,6 +1672,7 @@ D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\scopedcss\Shared\ShopLayout.razor.rz.scp.css
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\scopedcss\Shared\ShopNavMenu.razor.rz.scp.css
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\scopedcss\Shared\UserButton.razor.rz.scp.css
+D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\scopedcss\Pages\OrderDetails.razor.rz.scp.css
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\scopedcss\bundle\BlazorEcommerce_V2.Client.styles.css
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\scopedcss\projectbundle\BlazorEcommerce_V2.Client.bundle.scp.css
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\BlazorEcommerce_V2.Client.csproj.CopyComplete
@@ -1678,5 +1680,3 @@ D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\refint\BlazorEcommerce_V2.Client.dll
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\BlazorEcommerce_V2.Client.pdb
 D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\ref\BlazorEcommerce_V2.Client.dll
-D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\scopedcss\Pages\Orders.razor.rz.scp.css
-D:\Projects_Visual_Studio\BlazorEcommerce_V2\BlazorEcommerce_V2\Client\obj\Debug\net6.0\scopedcss\Pages\OrderDetails.razor.rz.scp.css

@@ -20,15 +20,23 @@ namespace BlazorEcommerce_V2.Client.Services.OrderService
         {
             return (await _authStateProvider.GetAuthenticationStateAsync()).User.Identity.IsAuthenticated;
         }
-        public async Task PlaceOrder()
+        public async Task<string> PlaceOrder()
         {
             if (await IsUserAuthenticated())
             {
-                var response = await _http.PostAsync("api/order", null);
+                //Depois que o PlaceOrder eh chamado,a tabela CartItems do banco de dados eh zerada 
+
+                //Verificar metodo _context.CartItems.RemoveRange dentro da api PlaceOrder
+                //var response = await _http.PostAsync("api/order", null);
+
+                var response = await _http.PostAsync("api/payment/checkout", null);
+                string url = await response.Content.ReadAsStringAsync();
+                return url;
             }
             else
             {
-                _navigationManager.NavigateTo("login");
+                //_navigationManager.NavigateTo("login");
+                return "login";
             }
         }
 
