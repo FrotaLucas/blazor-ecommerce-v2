@@ -85,12 +85,12 @@ namespace BlazorEcommerce_V2.Server.Services.OrderService
 
         //private int GetUserId() => int.Parse(_httpContextAccessor?.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier));
 
-        public async Task<ServiceResponse<bool>> PlaceOrder()
+        public async Task<ServiceResponse<bool>> PlaceOrder(int userId)
         {
 
-            Console.WriteLine("UserId" + _authService.GetUserId());
+            //Console.WriteLine("UserId" + _authService.GetUserId());
 
-            var products = (await _cartService.GetDbCartProducts()).Data;
+            var products = (await _cartService.GetDbCartProducts(userId)).Data;
             decimal totalPrice = 0;
             products.ForEach(product => totalPrice += product.Price * product.Quantity);
 
@@ -111,7 +111,7 @@ namespace BlazorEcommerce_V2.Server.Services.OrderService
             //tambem vai ser preenchida!!
             var order = new Order()
             {
-                UserId = _authService.GetUserId(),
+                UserId = userId,
                 OrderDate = DateTime.Now,
                 TotalPrice = totalPrice,
                 OrderItems = orderItems
@@ -121,7 +121,7 @@ namespace BlazorEcommerce_V2.Server.Services.OrderService
 
             //depois de fazer pedido, uma ordem eh criada na tabela Orders e o carrinho eh entao deletado da tabela CarttItems
             _context.CartItems.RemoveRange(_context.CartItems
-                .Where(ci => ci.UserId == _authService.GetUserId()));
+                .Where(ci => ci.UserId == userId));
 
             await _context.SaveChangesAsync();
 
