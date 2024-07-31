@@ -31,7 +31,7 @@ namespace BlazorEcommerce_V2.Server.Services.PaymentService
                 PriceData = new SessionLineItemPriceDataOptions
                 {
                     UnitAmountDecimal = product.Price * 100,
-                    Currency = "usd",
+                    Currency = "eur",
                     ProductData = new SessionLineItemPriceDataProductDataOptions
                     {
                         Name = product.Title,
@@ -44,9 +44,15 @@ namespace BlazorEcommerce_V2.Server.Services.PaymentService
             var options = new SessionCreateOptions
             {
                 CustomerEmail = _authService.GetUserEmail(),
+                ShippingAddressCollection = new SessionShippingAddressCollectionOptions
+                {
+                    AllowedCountries = new List<string> {"DE","FR","IT","ES","EG"}
+                },
                 PaymentMethodTypes = new List<string>
                 {
-                    "card"
+                    "card",
+                    "sepa_debit",
+                    "paypal"
                 },
                 LineItems = lineItems,
                 Mode = "payment",

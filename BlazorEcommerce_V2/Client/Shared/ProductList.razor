@@ -72,10 +72,10 @@ else
 
         else if(variants.Count == 1)
         {
-            return $"${variants[0].Price}";
+            return $"€{variants[0].Price}";
         }
 
         decimal minPrice = variants.Min(p => p.Price);
-        return $"starting at ${minPrice}";
+        return $"starting at €{minPrice}";
     }
 }

@@ -39,11 +39,11 @@ else
                 @if (GetSelectedVariant().OriginalPrice > GetSelectedVariant().Price)
                 {
                     <h6 class="text-muted original-price">
-                        @GetSelectedVariant().OriginalPrice
+                        €@GetSelectedVariant().OriginalPrice
                     </h6>
                 }
                 <h4 class="price">
-                    @GetSelectedVariant().Price
+                    €@GetSelectedVariant().Price
                 </h4>
             }
             @* NAO EXECUTA usando @AddToCart() *@
