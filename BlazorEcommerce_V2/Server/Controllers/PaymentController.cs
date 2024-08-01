@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Stripe.BillingPortal;
 
 namespace BlazorEcommerce_V2.Server.Controllers
 {
@@ -19,6 +20,7 @@ namespace BlazorEcommerce_V2.Server.Controllers
         public async Task<ActionResult<string>> CreateCheckoutSession()
         {
             var session = await _paymentService.CreateCheckoutSession();
+            //Essa Url aqui representa a rota de pagamento do stripe. Ali o Cliente consome essa api, pega a string e joga no navegador
             return Ok(session.Url);
         }
 

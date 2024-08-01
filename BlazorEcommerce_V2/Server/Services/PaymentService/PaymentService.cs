@@ -1,6 +1,7 @@
 ﻿using BlazorEcommerce_V2.Server.Services.AuthService;
 using BlazorEcommerce_V2.Server.Services.CartService;
 using BlazorEcommerce_V2.Server.Services.OrderService;
+using Microsoft.EntityFrameworkCore.SqlServer.Query.Internal;
 using Stripe;
 using Stripe.Checkout;
 
@@ -57,7 +58,7 @@ namespace BlazorEcommerce_V2.Server.Services.PaymentService
                 LineItems = lineItems,
                 Mode = "payment",
                 SuccessUrl = "https://localhost:7003/order-success",
-                CancelUrl = "https://localhost:7003/cart"
+                CancelUrl = "https://localhost:7003/cart",
             };
 
             var service = new SessionService();
