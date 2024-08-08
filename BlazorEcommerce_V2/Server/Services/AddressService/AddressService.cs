@@ -19,8 +19,8 @@ namespace BlazorEcommerce_V2.Server.Services.AddressService
             if( dbAddress == null)
             {
                 address.UserId = _authService.GetUserId();
-                response.Data = dbAddress;
                 _context.Addresses.Add(address);
+                response.Data = address;
             }
             else
             {
@@ -31,6 +31,8 @@ namespace BlazorEcommerce_V2.Server.Services.AddressService
                 dbAddress.State = address.State;
                 dbAddress.Zip = address.Zip;
                 dbAddress.Country = address.Country;    
+                //return to frontend when dbAddress != null
+                response.Data = dbAddress;
             }
 
             await _context.SaveChangesAsync();
