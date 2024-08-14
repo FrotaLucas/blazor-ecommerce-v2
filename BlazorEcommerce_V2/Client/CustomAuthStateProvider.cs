@@ -23,6 +23,7 @@ namespace BlazorEcommerce_V2.Client
             //checar se essa secao Authorization esta sendo criada dentro da HTTP request !!!!!!!!!!!!!!
             _http.DefaultRequestHeaders.Authorization = null;
 
+            //se for autenticado entra no if
             if(!string.IsNullOrEmpty(authToken))
             {
                 try
@@ -45,6 +46,7 @@ namespace BlazorEcommerce_V2.Client
             var user = new ClaimsPrincipal(identity);
             var state = new AuthenticationState(user);
 
+            //go to definition em ClaimsPrincipal para poder entender melhor.
             //bool status = state.User.Identity.IsAuthenticated;
             //bool status = new AuthenticationState(user).User.Identity.IsAuthenticated;
             NotifyAuthenticationStateChanged(Task.FromResult(state));

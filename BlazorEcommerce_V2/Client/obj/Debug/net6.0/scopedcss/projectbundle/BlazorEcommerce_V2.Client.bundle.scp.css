@@ -129,6 +129,16 @@
         height: auto;
     }
 }
+/* /Shared/AdminMenu.razor.rz.scp.css */
+
+.top-row a[b-i4ljhmxw1x]
+{
+    margin-left: 0;
+}
+
+.dropdown-item:hover[b-i4ljhmxw1x] {
+    background-color: white;
+}
 /* /Shared/FeaturedProducts.razor.rz.scp.css */
 .container[b-7rpt1qbx3c] {
     display: flex;

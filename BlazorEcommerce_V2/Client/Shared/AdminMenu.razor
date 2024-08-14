@@ -1,0 +1,25 @@
+﻿@inject AuthenticationStateProvider AuthStateProvider
+@using System.Security.Claims
+
+<h3>AdminMenu</h3>
+
+@if (isAuthorized)
+{
+    <a class="dropdown-item" href="admin/categories">Categories</a>
+}
+
+@code {
+    bool isAuthorized = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        //resumo: token vai dizer se eh admin ou nao. Verificar Claim role
+        string role = (await AuthStateProvider.GetAuthenticationStateAsync())
+        .User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role).Value;
+
+        if( role.Contains("Admin"))
+        {
+            isAuthorized = true;
+        }
+    }
+}
