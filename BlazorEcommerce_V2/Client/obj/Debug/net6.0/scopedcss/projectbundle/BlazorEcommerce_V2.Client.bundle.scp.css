@@ -131,9 +131,8 @@
 }
 /* /Shared/AdminMenu.razor.rz.scp.css */
 
-.top-row a[b-i4ljhmxw1x]
-{
-    margin-left: 0;
+.admin-link[b-i4ljhmxw1x] {
+    margin-left: 0 !important;
 }
 
 .dropdown-item:hover[b-i4ljhmxw1x] {
