@@ -4,6 +4,7 @@ using BlazorEcommerce_V2.Server.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlazorEcommerce_V2.Server.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20240818140511_CategoryFlags")]
+    partial class CategoryFlags
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -96,7 +98,7 @@ namespace BlazorEcommerce_V2.Server.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<bool>("Deleted")
+                    b.Property<bool>("Deleting")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
@@ -118,7 +120,7 @@ namespace BlazorEcommerce_V2.Server.Migrations
                         new
                         {
                             Id = 1,
-                            Deleted = false,
+                            Deleting = false,
                             Name = "Books",
                             Url = "books",
                             Visible = true
@@ -126,7 +128,7 @@ namespace BlazorEcommerce_V2.Server.Migrations
                         new
                         {
                             Id = 2,
-                            Deleted = false,
+                            Deleting = false,
                             Name = "Movie",
                             Url = "movies",
                             Visible = true
@@ -134,7 +136,7 @@ namespace BlazorEcommerce_V2.Server.Migrations
                         new
                         {
                             Id = 3,
-                            Deleted = false,
+                            Deleting = false,
                             Name = "Video Games",
                             Url = "video-games",
                             Visible = true

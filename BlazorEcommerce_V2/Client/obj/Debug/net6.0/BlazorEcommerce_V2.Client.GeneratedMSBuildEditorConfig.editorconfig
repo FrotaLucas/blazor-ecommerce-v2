@@ -20,6 +20,14 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Projects_Visual_Studio/BlazorEcommerce_V2/BlazorEcommerce_V2/Client/Pages/Admin/Categories.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2F0ZWdvcmllcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projects_Visual_Studio/BlazorEcommerce_V2/BlazorEcommerce_V2/Client/Pages/Admin/Categories.razor.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2F0ZWdvcmllcy5yYXpvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Projects_Visual_Studio/BlazorEcommerce_V2/BlazorEcommerce_V2/Client/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
