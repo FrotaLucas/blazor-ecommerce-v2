@@ -131,12 +131,21 @@
 }
 /* /Shared/AdminMenu.razor.rz.scp.css */
 
-.admin-link[b-i4ljhmxw1x] {
-    margin-left: 0 !important;
+/*pq quando eu habilito margin-left no ShopLayout.razor.css, essa propriedade sobrescreve aqui em cima  
+do margin-left da tag a ????? */
+
+/* a {
+    margin-left: 0px;
+    color: red;
 }
+*/
 
 .dropdown-item:hover[b-i4ljhmxw1x] {
     background-color: white;
+}
+/* /Shared/CartCounter.razor.rz.scp.css */
+.cart-counter[b-voepainw03] {
+    margin-left: 0.5em;
 }
 /* /Shared/FeaturedProducts.razor.rz.scp.css */
 .container[b-7rpt1qbx3c] {
@@ -177,7 +186,7 @@ img:hover[b-7rpt1qbx3c]
 .home-button[b-mejroeu265] {
     white-space: nowrap;
     margin-right: 10px;
-    transform: rotate(-5deg);
+    /*transform: rotate(-5deg);*/
 }
 /* /Shared/MainLayout.razor.rz.scp.css */
 .page[b-qw1mbwvvr9] {
@@ -185,7 +194,8 @@ img:hover[b-7rpt1qbx3c]
     display: flex;
     flex-direction: column;
 }
-
+/*
+Esse componente MainLayout inteiro nao serve para nada!! Acho que ele foi substituido pelo ShopLayout. Testar*/
 main[b-qw1mbwvvr9] {
     flex: 1;
 }
@@ -383,7 +393,7 @@ main[b-x0sjsf7dbn] {
 
     .top-row[b-x0sjsf7dbn]  a, .top-row[b-x0sjsf7dbn]  .btn-link {
         white-space: nowrap;
-        margin-left: .5rem;
+        /*margin-left: 15rem;*/
         text-decoration: none;
     }
 
@@ -500,7 +510,7 @@ main[b-x0sjsf7dbn] {
     margin-left: .5em;
 }
 
-/*Essas classe abaixo nao estao servindo de nada*/ 
+/*Top-row nao esta no componente UserButton. Esta um nivel acima em ShopLayout*/ 
 .top-row a[b-0gxpoyj3ib] {
     margin-left: 0;
 }

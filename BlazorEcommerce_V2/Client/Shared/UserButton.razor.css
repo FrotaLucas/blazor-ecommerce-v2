@@ -6,7 +6,7 @@
     margin-left: .5em;
 }
 
-/*Essas classe abaixo nao estao servindo de nada*/ 
+/*Top-row nao esta no componente UserButton. Esta um nivel acima em ShopLayout*/ 
 .top-row a {
     margin-left: 0;
 }

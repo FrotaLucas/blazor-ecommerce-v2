@@ -3,7 +3,8 @@
     display: flex;
     flex-direction: column;
 }
-
+/*
+Esse componente MainLayout inteiro nao serve para nada!! Acho que ele foi substituido pelo ShopLayout. Testar*/
 main[b-qw1mbwvvr9] {
     flex: 1;
 }
