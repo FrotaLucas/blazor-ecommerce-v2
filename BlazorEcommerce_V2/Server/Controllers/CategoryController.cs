@@ -1,4 +1,5 @@
 ﻿using BlazorEcommerce_V2.Server.Services.CategoryService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,12 +16,43 @@ namespace BlazorEcommerce_V2.Server.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<ServiceResponse<List<Category>>>> Get()
+        public async Task<ActionResult<ServiceResponse<List<Category>>>> GetCategories()
         {
             //preciso do wait aqui novamente mesmo sabendo que dentro de _categoryService esta sendo usado await?????
             var category = await _categoryService.GetCategories();
             return Ok(category);
+        } 
+        
+        [HttpGet("admin"), Authorize(Roles = "Admin")]
+        public async Task<ActionResult<ServiceResponse<List<Category>>>> GetAdminCategories()
+        {
+            var result = await _categoryService.GetAdminCategories();
+            return Ok(result);
         }
+
+        [HttpDelete("admin"), Authorize(Roles = "Admin")]
+        public async Task<ActionResult<ServiceResponse<List<Category>>>> DeleteCategory(int id)
+        {
+            var result = await _categoryService.DeleteCategory(id);
+            return Ok(result);
+        }
+        
+        [HttpPost("admin"), Authorize(Roles = "Admin")]
+        public async Task<ActionResult<ServiceResponse<List<Category>>>> AddCategories(Category category)
+        {
+            var result = await _categoryService.AddCategories(category);
+            return Ok(result);
+        }
+        
+        [HttpPut("admin"), Authorize(Roles = "Admin")]
+        public async Task<ActionResult<ServiceResponse<List<Category>>>> UpdateCategory(Category category)
+        {
+            var result = await _categoryService.UpdateCategory(category);
+            return Ok(result);
+        }
+
+
+
     }
 
         

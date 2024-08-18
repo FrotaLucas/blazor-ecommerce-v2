@@ -7,11 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Pages\Admin\Categories.razor.css" />
     <None Remove="Pages\OrderDetails.razor.css" />
     <None Remove="Shared\CartCounter.razor.css" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Pages\Admin\Categories.razor.css" />
     <Content Include="Pages\OrderDetails.razor.css" />
     <Content Include="Shared\CartCounter.razor.css" />
   </ItemGroup>
