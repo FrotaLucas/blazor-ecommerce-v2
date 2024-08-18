@@ -30,12 +30,12 @@ namespace BlazorEcommerce_V2.Server.Controllers
             return Ok(result);
         }
 
-        [HttpDelete("admin"), Authorize(Roles = "Admin")]
+        [HttpDelete("admin/{id}"), Authorize(Roles = "Admin")]
         public async Task<ActionResult<ServiceResponse<List<Category>>>> DeleteCategory(int id)
         {
             var result = await _categoryService.DeleteCategory(id);
             return Ok(result);
-        }
+        }   
         
         [HttpPost("admin"), Authorize(Roles = "Admin")]
         public async Task<ActionResult<ServiceResponse<List<Category>>>> AddCategories(Category category)
@@ -51,7 +51,7 @@ namespace BlazorEcommerce_V2.Server.Controllers
             return Ok(result);
         }
 
-
+       
 
     }
 
