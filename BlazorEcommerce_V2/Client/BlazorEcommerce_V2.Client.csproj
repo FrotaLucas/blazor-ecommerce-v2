@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove=".gitignore" />
     <None Remove="Pages\Admin\Categories.razor.css" />
     <None Remove="Pages\OrderDetails.razor.css" />
     <None Remove="Shared\CartCounter.razor.css" />

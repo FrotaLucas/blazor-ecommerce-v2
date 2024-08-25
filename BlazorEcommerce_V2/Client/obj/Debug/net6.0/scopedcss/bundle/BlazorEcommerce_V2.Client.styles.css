@@ -1,4 +1,27 @@
 /* /Pages/Admin/Categories.razor.rz.scp.css */
+.header[b-qj9i5i91dx] {
+    font-weight: 600;
+    display: flex;
+    text-align: start;
+    border-bottom: 1px solid lightgrey;
+    margin-bottom: 6px;
+    padding: 15px;
+    
+}
+
+
+.row[b-qj9i5i91dx] {
+    display: flex;
+    text-align: start;
+    padding: 2px;
+    margin-bottom: 6px;
+}
+
+.col-visible[b-qj9i5i91dx] 
+{
+    text-align: center;
+}
+
 /* /Pages/Cart.razor.rz.scp.css */
 .container[b-8clujmfgb5] {
     display: flex;
