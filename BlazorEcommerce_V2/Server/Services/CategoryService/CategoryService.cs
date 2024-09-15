@@ -11,6 +11,7 @@
         public async Task<ServiceResponse<List<Category>>> AddCategories(Category category)
         {
             //o que significa essa linha de codigo ?
+           //R: Eh um chain assignment operator. Primeiro category.IsNew recebe false, e ai category.Editing recebe tbm false.
             category.Editing = category.IsNew = false;
 
             await _context.Categories.AddAsync(category);   
@@ -50,6 +51,7 @@
 
         public async Task<ServiceResponse<List<Category>>> GetAdminCategories()
         {
+          //0 - false and 1 - true
           var categories = await _context.Categories
                 .Where(c => !c.Deleted).ToListAsync();
 
@@ -64,7 +66,7 @@
         {
             //1 no bando de dados eh false e 0 eh true
             var categories = await _context.Categories
-                .Where( c => !c.Deleted && c.Visible)
+                .Where( c => !c.Deleted && c.Visible) //pra dar true && true Deleted eh 0 e Visible 1
                 .ToListAsync();
 
             return new ServiceResponse<List<Category>>()

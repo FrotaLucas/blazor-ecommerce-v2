@@ -1,0 +1,3 @@
+  Update Categories
+  Set Deleted = 0
+  where Id  = 1

@@ -4,7 +4,8 @@ namespace BlazorEcommerce_V2.Client.Services.ProductService
 {
     public interface IProductService
     {
-      
+
+        //PRECISO DE DEFINIR COMO TASK TODA VEZ QUE O METODO INTERNAMENTE USA AWAIT
         event Action ProductsChanged;
         List<Product> Products { get; set; }
         string Message {  get; set; }

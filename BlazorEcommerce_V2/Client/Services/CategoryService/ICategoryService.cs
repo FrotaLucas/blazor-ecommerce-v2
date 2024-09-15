@@ -2,6 +2,7 @@
 {
     public interface ICategoryService
     {
+        //PRECISO DE DEFINIR COMO TASK TODA VEZ QUE O METODO INTERNAMENTE USA AWAI
         event Action OnChange;
         List<Category> Categories { get; set; }
         List<Category> AdminCategories { get; set; }

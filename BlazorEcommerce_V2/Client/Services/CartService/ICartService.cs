@@ -2,6 +2,8 @@
 {
     public interface ICartService 
     {
+
+        //PRECISO DE DEFINIR COMO TASK TODA VEZ QUE O METODO INTERNAMENTE USA AWAIT
         //pq nao tem a palavra public em nenhuma das propriedades???????????? ?
         event Action OnChange;
         Task AddToCart(CartItem cartItem);
