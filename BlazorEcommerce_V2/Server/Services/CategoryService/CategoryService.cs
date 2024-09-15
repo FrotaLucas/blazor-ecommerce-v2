@@ -36,7 +36,7 @@
 
             //altera no banco de dados
             category.Deleted = true;
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
 
             return await GetAdminCategories();
 
@@ -91,6 +91,8 @@
             dbCategory.Name = category.Name;
             dbCategory.Url = category.Url;
             dbCategory.Visible  = category.Visible;
+
+            await _context.SaveChangesAsync();
             //pq nao precisa atualizar Deleted tbm ? essa prop ta no bando de dados tbm
             //dbCategory.Deleted  = category.Deleted;
 
