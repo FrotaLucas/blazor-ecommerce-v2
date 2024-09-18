@@ -22,6 +22,15 @@
     text-align: center;
 }
 
+/* /Pages/Admin/ProductTypes.razor.rz.scp.css */
+.row[b-nwacpm2ied] {
+    display: flex;
+    padding: 6px;
+}
+
+.col[b-nwacpm2ied] {
+    flex: 1;
+}
 /* /Pages/Cart.razor.rz.scp.css */
 .container[b-8clujmfgb5] {
     display: flex;
