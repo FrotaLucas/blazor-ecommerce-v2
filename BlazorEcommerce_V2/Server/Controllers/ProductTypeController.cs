@@ -1,8 +1,6 @@
 ﻿using BlazorEcommerce_V2.Server.Services.ProductTypeService;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-
 
 namespace BlazorEcommerce_V2.Server.Controllers
 {
@@ -24,7 +22,8 @@ namespace BlazorEcommerce_V2.Server.Controllers
         public async Task<ActionResult<ServiceResponse<List<ProductType>>>> GetProductTypes()
         {
             var response = await _productTypeService.GetProductTypes();
-            return Ok(response);
+
+            return Ok(response);    
         }
 
     }

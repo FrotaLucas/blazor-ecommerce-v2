@@ -11,10 +11,10 @@
         public async Task<ServiceResponse<List<Category>>> AddCategories(Category category)
         {
             //o que significa essa linha de codigo ?
-           //R: Eh um chain assignment operator. Primeiro category.IsNew recebe false, e ai category.Editing recebe tbm false.
+            //R: Eh um chain assignment operator. Primeiro category.IsNew recebe false, e ai category.Editing recebe tbm false.
             category.Editing = category.IsNew = false;
 
-            await _context.Categories.AddAsync(category);   
+            await _context.Categories.AddAsync(category);
             _context.SaveChanges();
 
             //pq esse retorno usando a outra funcao  ?
