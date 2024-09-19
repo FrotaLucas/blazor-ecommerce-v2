@@ -1,6 +1,7 @@
 ﻿@page "/admin/product-types"
 @inject IProductTypeService ProductTypeService
-
+@implements IDisposable
+@attribute [Authorize(Roles = "Admin")]
 
 <h3>Product Types</h3>
 
@@ -60,15 +61,22 @@
     private void EditProductType(ProductType productType)
     {
         productType.Editing = true;
+        editingProductType = productType;
     }
 
     private async Task UpdateProductType()
     {
+        if (editingProductType.IsNew)
+            await ProductTypeService.AddProductType(editingProductType);
+        else
+            await ProductTypeService.UpdateProductType(editingProductType);
+        
+        editingProductType = new ProductType();
 
     }
 
     private async Task CreateNewProductType()
     {
-        
+        editingProductType = ProductTypeService.CreateNewProductType();
     }
 }
