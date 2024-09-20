@@ -16,7 +16,6 @@ namespace BlazorEcommerce_V2.Shared
         public bool Visible { get; set; } = true;
         public bool Deleted { get; set; } = false;
 
-
         [NotMapped]
         public bool Editing { get; set; } = false;
         [NotMapped]
