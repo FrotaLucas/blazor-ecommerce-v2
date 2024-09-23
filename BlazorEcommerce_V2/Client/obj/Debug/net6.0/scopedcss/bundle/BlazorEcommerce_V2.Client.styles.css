@@ -22,6 +22,13 @@
     text-align: center;
 }
 
+/* /Pages/Admin/Products.razor.rz.scp.css */
+
+
+img[b-qrcpd5mv1x] {
+    max-height: 100px;
+    max-width: 100px;
+}
 /* /Pages/Admin/ProductTypes.razor.rz.scp.css */
 .row[b-nwacpm2ied] {
     display: flex;
