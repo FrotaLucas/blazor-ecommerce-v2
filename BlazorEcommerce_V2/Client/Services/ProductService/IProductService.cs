@@ -8,6 +8,7 @@ namespace BlazorEcommerce_V2.Client.Services.ProductService
         //PRECISO DE DEFINIR COMO TASK TODA VEZ QUE O METODO INTERNAMENTE USA AWAIT
         event Action ProductsChanged;
         List<Product> Products { get; set; }
+        List<Product> AdminProducts { get; set; }
         string Message {  get; set; }
         int CurrentPage { get; set; }
         string LastSearchText { get; set; }
@@ -16,5 +17,7 @@ namespace BlazorEcommerce_V2.Client.Services.ProductService
         Task<ServiceResponse<Product>> GetProduct(int productId);
         Task SearchProducts( string searchText, int page);
         Task<List<string>> GetProductSearchSuggestions(string searchText);
+
+        Task GetAdminProducts();
     }
 }
