@@ -3,9 +3,12 @@
     public class ProductService : IProductService
     {
             private readonly DataContext _context;
-            public ProductService(DataContext context)
+            private readonly IHttpContextAccessor _httpContextAccessor;
+
+            public ProductService(DataContext context, IHttpContextAccessor httpContextAccessor)
             {
                 _context = context;
+            _httpContextAccessor = httpContextAccessor;
             }
 
         public async Task<ServiceResponse<List<Product>>> GetFeaturedProducts()
@@ -36,11 +39,22 @@
         public async Task<ServiceResponse<Product>> GetProductAsync(int productId)
             {
                 var response = new ServiceResponse<Product>();
-            //op1
-            var product = await _context.Products
-                .Include(p => p.Variants.Where(v=> v.Visible && !v.Deleted ))
-                .ThenInclude(pt => pt.ProductType)
-                .FirstOrDefaultAsync(p => p.Id == productId && p.Visible && !p.Deleted);
+                Product product = null;
+
+            if (_httpContextAccessor.HttpContext.User.IsInRole("Admin")  )
+            {
+                product = await _context.Products.Include(p => p.Variants.Where(v => !v.Deleted))
+                    .ThenInclude(v => v.ProductType)
+                    .FirstOrDefaultAsync( p => p.Id == productId && !p.Deleted );
+            }
+            else
+            {
+                //op1
+                     product = await _context.Products
+                    .Include(p => p.Variants.Where(v=> v.Visible && !v.Deleted ))
+                    .ThenInclude(pt => pt.ProductType)
+                    .FirstOrDefaultAsync(p => p.Id == productId && p.Visible && !p.Deleted);
+            }
 
             //op2
             //var product = await _context.Products.FirstOrDefaultAsync(p => p.Id == productId);
