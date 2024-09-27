@@ -4,3 +4,10 @@ img {
     max-height: 100px;
     max-width: 100px;
 }
+
+
+.add-product-admin {
+    float: right;
+    margin-right: 150px;
+    margin-bottom: 50px;
+}

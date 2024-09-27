@@ -29,6 +29,13 @@ img[b-qrcpd5mv1x] {
     max-height: 100px;
     max-width: 100px;
 }
+
+
+.add-product-admin[b-qrcpd5mv1x] {
+    float: right;
+    margin-right: 150px;
+    margin-bottom: 50px;
+}
 /* /Pages/Admin/ProductTypes.razor.rz.scp.css */
 .row[b-nwacpm2ied] {
     display: flex;

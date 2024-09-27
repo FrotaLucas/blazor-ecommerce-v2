@@ -1,18 +1,26 @@
 ﻿@page "/admin/products"
 @inject IProductService ProductService
 @attribute [Authorize(Roles = "Admin")]
+@inject NavigationManager NavigationManager
 
 <h3>Products</h3>
 
 
 @if (ProductService.AdminProducts == null)
 {
-    <span>Loading Products</span>
+    <span>Loading Products ...</span>
 }
 
 else
 {
-    <table class ="table" style="width:80%; align-items:center">
+    //tbm funciona pq ????
+    // <button @onclick="() => CreateNewProduct()">
+
+    <button class="btn btn-primary add-product-admin" @onclick="CreateNewProduct">
+        <i class="oi oi-plus"/> Add new Product
+    </button>
+
+    <table class ="table" style="width:90%; align-items:center">
         <thead>
             <tr>
                 <th></th>
@@ -65,6 +73,11 @@ else
 
     void EditProduct(int productId)
     {
+        NavigationManager.NavigateTo($"admin/product/{productId}");
+    }
 
+    void CreateNewProduct()
+    {
+        NavigationManager.NavigateTo("admin/product");
     }
 }
