@@ -10,6 +10,12 @@
             Task<ServiceResponse<List<Product>>> GetFeaturedProducts();
             Task<ServiceResponse<List<Product>>> GetAdminProducts();
 
+            //esses servicos vinheram depois
+            Task<ServiceResponse<Product>> CreateProduct(Product product);
+            Task<ServiceResponse<bool>> DeleteProduct(int productId);
+            Task<ServiceResponse<Product>> UpdateProduct(Product product);
+
+
         }
    
 }

@@ -1,4 +1,7 @@
-﻿namespace BlazorEcommerce_V2.Server.Services.ProductService
+﻿using System.Drawing.Printing;
+using System.Reflection.Metadata.Ecma335;
+
+namespace BlazorEcommerce_V2.Server.Services.ProductService
 {
     public class ProductService : IProductService
     {
@@ -173,6 +176,93 @@
                             )
                             .Include(p => p.Variants)
                             .ToListAsync();
+        }
+
+        public async Task<ServiceResponse<Product>> CreateProduct(Product product)
+        {
+           foreach( var variante in product.Variants )
+            {
+                //provisorio
+                variante.ProductType = null;
+            }
+
+           _context.Products.Add(product);
+            await _context.SaveChangesAsync();
+
+            return new ServiceResponse<Product>
+            {
+                Data = product
+            };
+        }
+
+        public async Task<ServiceResponse<bool>> DeleteProduct(int productId)
+        {
+            var dbProduct = await _context.Products.FindAsync(productId);
+            if (dbProduct == null)
+            {
+                return new ServiceResponse<bool>
+                { 
+                    Data = false,
+                    Message = "Product now found.",
+                    Success = false
+                };
+            }
+
+            dbProduct.Deleted = true;
+
+            await _context.SaveChangesAsync();
+
+            return new ServiceResponse<bool> { Data = true };
+        }
+
+        public async Task<ServiceResponse<Product>> UpdateProduct(Product product)
+        {
+           var dbProduct = await _context.Products.FindAsync(product.Id);
+
+            if (dbProduct == null)
+            {
+                return new ServiceResponse<Product>
+                {
+                    Message = "Product now found.",
+                    Success = false
+                };
+            }
+
+            dbProduct.Title = product.Title;
+            dbProduct.Description = product.Description;
+            dbProduct.ImageUrl = product.ImageUrl;
+            dbProduct.Visible = product.Visible;
+            dbProduct.Deleted = product.Deleted;
+
+            foreach( var variant in product.Variants )
+            {
+                var dbVariant = await _context.ProductVariant
+                    .SingleOrDefaultAsync(v => v.ProductId == variant.ProductId &&
+                    v.ProductTypeId == variant.ProductTypeId);
+
+                if ( dbVariant == null )
+                {
+                    dbVariant.ProductType = null;
+                    _context.ProductVariant.Add(variant);
+                }
+
+                //Pq precisa atualizar ProductId tbm ? Depois de atualzar Price e Original Price da variante de um produto,
+                //a variante ainda vai continuar se referenciando sobre o mesmo produto!!
+                dbVariant.ProductId = variant.ProductId;
+                dbVariant.OriginalPrice = variant.Price;
+                dbVariant.Price = variant.Price;
+                dbVariant.Deleted = variant.Deleted;
+                dbVariant.Visible = variant.Visible;
+
+            }
+                //dbvariante tem escopo restrito no loop. Esse save nao deveria esta dentro do foreach ?
+            await _context.SaveChangesAsync();
+
+            //certo seria retornar dbProduct com o estado mais atual do que foi feito no Banco de Dados. Nao??
+            return new ServiceResponse<Product>
+            {
+                Data = product,
+            };
         }
     }
     
