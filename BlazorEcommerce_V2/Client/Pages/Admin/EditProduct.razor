@@ -1,0 +1,104 @@
+﻿@page "/admin/product"
+@page "/admin/product/{id:int}"
+@inject IProductService ProductService
+@inject ICategoryService CategoryService
+@inject IProductTypeService ProductTypeService
+
+@if (loading)
+{
+    <span>@msg</span>
+}
+
+else
+{
+    @if (product.Editing)
+    {
+        <h3>Edit "@product.Title"</h3>
+    }
+    else if (product.IsNew)
+    {
+        <h3>Create a new Product</h3>
+    }
+
+    <EditForm Model="product" OnInvalidSubmit="AddOrUpdateProduct">
+        <DataAnnotationsValidator></DataAnnotationsValidator>
+        <div class="mb-0">
+            <label for="title">Title</label>
+            <InputText id="title" @bind-Value=product.Title class="form-control">@product.Title</InputText>
+        </div>
+
+        <div class="mb-0">
+            <label for="imageUrl">Image Url</label>
+            <InputText id="imageUrl" @bind-Value=product.ImageUrl class="form-control">@product.ImageUrl</InputText>
+        </div>
+
+        <div class="mb-0">
+            <img src="@product.ImageUrl">
+        </div>
+
+        <div class="mb-0">
+            <label for="description">Description</label>
+            <InputText id="description" @bind-Value=product.Description class="form-control">@product.Description</InputText>
+        </div>
+        <hr/>
+
+
+
+        
+    </EditForm>
+
+    
+}
+
+
+
+@code {
+    [Parameter]
+    public int Id { get; set;}
+
+    bool loading = true;
+    string btnText = "";
+    string msg = "Loading ...";
+    Product product = new Product();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await ProductTypeService.GetProductTypes();
+        await CategoryService.GetAdminCategories();
+
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (Id == 0)
+        {
+            product = new Product { IsNew = true };
+            btnText = "Create a product";
+        }
+
+        else
+        {
+            var dbProduct = (await ProductService.GetProduct(Id)).Data;
+
+            if(dbProduct == null)
+            {
+                msg = $"Product with Id '{Id}' does not exist!";
+                return;
+            }
+
+            product = dbProduct;
+            product.Editing = true;
+            btnText = "Update Product";
+        }
+
+        loading = false;
+    }
+
+
+    //PQ NAO PODE SER ASSSIM  private async Task AddOrUpdateProduct()  ???
+    async void AddOrUpdateProduct()
+    {
+        
+    }
+}
