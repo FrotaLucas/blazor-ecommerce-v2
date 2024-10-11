@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\BlazorEcommerce_V2.Server.props" />
-</Project>
