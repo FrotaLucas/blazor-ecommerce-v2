@@ -1,6 +1,7 @@
 # Ignore bin and obj folders in all projects
-**/bin/
+bin/
 **/obj/
+
 
 #extra filter to ignore dll files
 **/obj/Debug/net6.0/
