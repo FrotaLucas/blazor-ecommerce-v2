@@ -17,19 +17,3 @@
 build/
 logs/
 *.log
-
-# Ignore NuGet packages
-*.nupkg
-*.snupkg
-**/packages/
-
-# Ignore other IDE or tool-specific files
-_ReSharper*/
-*.DotSettings.user
-*.vscode/
-
-# Ignore Node.js packages (if applicable)
-node_modules/
-
-# Ignore generated files by some tools
-Generated_Code/
