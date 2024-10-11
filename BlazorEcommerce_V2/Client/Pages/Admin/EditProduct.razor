@@ -3,6 +3,8 @@
 @inject IProductService ProductService
 @inject ICategoryService CategoryService
 @inject IProductTypeService ProductTypeService
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
 
 @if (loading)
 {
@@ -40,21 +42,82 @@ else
             <label for="description">Description</label>
             <InputText id="description" @bind-Value=product.Description class="form-control">@product.Description</InputText>
         </div>
-        <hr/>
+        <hr />
 
+        <div class="header">
+            <div class="col">Product Type / Variant</div>
+            <div class="col">Price</div>
+            <div class="col">Original Price</div>
+            <div class="col">Visible</div>
+            <div class="col"></div>
+        </div>
 
+        @foreach (var variant in product.Variants)
+        {
+            <div class="row">
+                <div class="col">
+                    <InputSelect disabled="@variant.Deleted" @bind-Value="variant.ProductTypeId" class="form-control">
+                        @foreach (var productType in ProductTypeService.ProductTypes)
+                        {
+                            <option value="@productType.Id.ToString()">@productType.Name</option>
+                        }
+                    </InputSelect>
+                </div>
 
-        
+                <div class="col">
+                    <InputNumber @bind-Value=variant.Price>@variant.Price</InputNumber>
+                </div>
+
+                <div class="col">
+                    <InputNumber @bind-Value=variant.OriginalPrice>@variant.OriginalPrice</InputNumber>
+                </div>
+
+                <div class="col col-visible">
+                    <InputCheckbox @bind-Value=variant.Visible style="transform:scale(1.5,1.5);" disabled="@variant.Deleted"></InputCheckbox>
+                </div>
+
+                <div class="col">
+                    <button type="button" class="btn btn-primary" @onclick="@(()=>RemoveVariant(variant.ProductTypeId))">
+                        <oi class="oi oi-trash"></oi>
+                    </button>
+                </div>
+
+            </div>
+        }
+
+        <button class="btn btn-primary" type="button" @onclick="AddVariant">
+            <i class="oi oi-plus">Add Variant</i>
+        </button>
+        <hr />
+
+        <div class="form-check">
+            <InputCheckbox id="featured" @bind-Value="product.Featured" class="form-check-input"></InputCheckbox>
+            <label for="featured" class="form-check-label">Featured</label>
+        </div>
+        <div class="form-check">
+            <InputCheckbox id="visible" @bind-Value="product.Visible" class="form-check-input"></InputCheckbox>
+            <label for="visible" class="form-check-label">Visible</label>
+        </div>
+        <hr />
+        <button type="submit" class="btn btn-primary float-end">@btnText</button>
+
+        <ValidationSummary></ValidationSummary>
     </EditForm>
 
-    
+  @*   @if (!product.IsNew)
+    {
+        <button type="button" class="btn btn-danger float-start" @onclick="DeleteProduct">
+            Delete Product
+        </button>
+    } *@
+
 }
 
 
 
 @code {
     [Parameter]
-    public int Id { get; set;}
+    public int Id { get; set; }
 
     bool loading = true;
     string btnText = "";
@@ -66,7 +129,6 @@ else
     {
         await ProductTypeService.GetProductTypes();
         await CategoryService.GetAdminCategories();
-
     }
 
     protected override async Task OnParametersSetAsync()
@@ -81,7 +143,7 @@ else
         {
             var dbProduct = (await ProductService.GetProduct(Id)).Data;
 
-            if(dbProduct == null)
+            if (dbProduct == null)
             {
                 msg = $"Product with Id '{Id}' does not exist!";
                 return;
@@ -99,6 +161,38 @@ else
     //PQ NAO PODE SER ASSSIM  private async Task AddOrUpdateProduct()  ???
     async void AddOrUpdateProduct()
     {
-        
+
     }
+
+    async void RemoveVariant(int productTypeId)
+    {
+        var variant = product.Variants.Find(v => v.ProductTypeId == productTypeId);
+
+        if (variant == null)
+            return;
+
+        if (variant.IsNew)
+            product.Variants.Remove(variant);
+
+        else
+            variant.Deleted = true;
+    }
+
+    void AddVariant()
+    {
+        product.Variants.Add(new ProductVariant { IsNew = true, ProductId = product.Id });
+    }
+
+    // async void DeleteProduct()
+    // {
+    //     bool confirmed = await JSRuntime.InvokeAsync<bool>("confirm",
+    //         $"Do you really want to delete '{product.Title}'?");
+    //     if (confirmed)
+    //     {
+    //         await ProductService.DeleteProduct(product);
+    //         NavigationManager.NavigateTo("admin/products");
+    //     }
+    // }
+
+
 }
