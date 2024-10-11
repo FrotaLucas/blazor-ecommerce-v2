@@ -9,6 +9,7 @@
   <ItemGroup>
     <None Remove=".gitignore" />
     <None Remove="Pages\Admin\Categories.razor.css" />
+    <None Remove="Pages\Admin\EditProduct.razor.css" />
     <None Remove="Pages\Admin\ProductType.razor.css" />
     <None Remove="Pages\OrderDetails.razor.css" />
     <None Remove="Shared\CartCounter.razor.css" />
@@ -16,6 +17,7 @@
 
   <ItemGroup>
     <Content Include="Pages\Admin\Categories.razor.css" />
+    <Content Include="Pages\Admin\EditProduct.razor.css" />
     <Content Include="Pages\OrderDetails.razor.css" />
     <Content Include="Shared\CartCounter.razor.css" />
   </ItemGroup>
