@@ -1,3 +1,16 @@
   Update Categories
   Set Deleted = 0
   where Id  = 1
+
+
+INSERT INTO Products
+VALUES Title, Description, ImageUrl, CategoryId, Featured, Deleted, Visible 
+"teste
+
+
+
+adicionar dado
+
+-- Insert specific values into the 'products' table
+INSERT INTO Products (Title, Description, ImageUrl, CategoryId, Featured, Deleted, Visible)
+VALUES ('Title Product', 'Description Product', 'https://example.com/images/product', 1, 0, 0, 1);

@@ -79,7 +79,7 @@ namespace BlazorEcommerce_V2.Client.Services.ProductService
         }
         public async Task<Product> CreateProduct(Product product)
         {
-            var result = await _http.PostAsJsonAsync("api/product", product);
+            var result = await _http.PostAsJsonAsync("api/product/admin", product);
             var newProduct = (await result.Content
                 .ReadFromJsonAsync<ServiceResponse<Product>>()).Data;
 
@@ -93,8 +93,11 @@ namespace BlazorEcommerce_V2.Client.Services.ProductService
 
         public async Task<Product> UpdateProduct(Product product)
         {
-            var result = await _http.PutAsJsonAsync("api/product", product);
-            return (await result.Content.ReadFromJsonAsync<ServiceResponse<Product>>()).Data; 
+            var result = await _http.PutAsJsonAsync("api/product/admin", product);
+            var content = await result.Content.ReadFromJsonAsync<ServiceResponse<Product>>();
+            //var test = content.Data.Title;
+            return content.Data;
+            //return (await result.Content.ReadFromJsonAsync<ServiceResponse<Product>>()).Data; 
         }
     }
 }
