@@ -18,7 +18,7 @@ namespace BlazorEcommerce_V2.Shared
         public string ImageUrl { get; set; } = string.Empty;
 
         public bool Featured {  get; set; } = false;
-        public Category Category { get; set; }
+        public Category? Category { get; set; }
         public int CategoryId { get; set; }
         public List<ProductVariant> Variants { get; set; } = new List<ProductVariant>();
         public bool Visible { get; set; } = true;  
