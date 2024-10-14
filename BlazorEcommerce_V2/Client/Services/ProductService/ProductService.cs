@@ -95,7 +95,6 @@ namespace BlazorEcommerce_V2.Client.Services.ProductService
         {
             var result = await _http.PutAsJsonAsync("api/product/admin", product);
             var content = await result.Content.ReadFromJsonAsync<ServiceResponse<Product>>();
-            //var test = content.Data.Title;
             return content.Data;
             //return (await result.Content.ReadFromJsonAsync<ServiceResponse<Product>>()).Data; 
         }
