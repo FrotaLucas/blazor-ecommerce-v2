@@ -24,7 +24,7 @@ namespace BlazorEcommerce_V2.Server.Controllers
             return Ok(response);
         }
         
-        [HttpPost, Authorize(Roles = "Admin")]
+        [HttpPost("admin"), Authorize(Roles = "Admin")]
         public async Task<ActionResult<ServiceResponse<Product>>> CreateProduct(Product product)
         {
             var response = await _productService.CreateProduct(product);
@@ -32,7 +32,7 @@ namespace BlazorEcommerce_V2.Server.Controllers
             return Ok(response);
         }
 
-        [HttpPut, Authorize(Roles = "Admin")]
+        [HttpPut("admin"), Authorize(Roles = "Admin")]
         public async Task<ActionResult<ServiceResponse<Product>>> UpdateProduct(Product product)
         {
             var response = await _productService.UpdateProduct(product);
@@ -48,6 +48,7 @@ namespace BlazorEcommerce_V2.Server.Controllers
             return Ok(response);
         }
 
+        //nao esta mais sendo usado, pq temos a api product/feature
         [HttpGet]
         public async Task<ActionResult<ServiceResponse<List<Product>>>> GetProducts()
         {
@@ -64,7 +65,7 @@ namespace BlazorEcommerce_V2.Server.Controllers
             return Ok(product);
         }
 
-        [HttpGet("category/{categoryUrl}")]
+        [HttpGet("category/{categoryUrl}")]  //QUEM DO CLIENTE ESTA CHAMANDO ESS API ?
         public async Task<ActionResult<ServiceResponse<List<Product>>>> GetProductByCategory(string categoryUrl)
         {
             var response = await _productService.GetProductsByCategory(categoryUrl);
