@@ -36,7 +36,7 @@
                 Editing = true,
             };
 
-            //eh adicionado ao bando de dados tbm ? PQ NAO PRECISO DE AWAIT ?
+            //eh adicionado ao banco de dados tbm ? PQ NAO PRECISO DE AWAIT ?
             AdminCategories.Add(newCategory);
             OnChange.Invoke();
             return newCategory;

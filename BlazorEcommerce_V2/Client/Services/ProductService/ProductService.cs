@@ -43,10 +43,16 @@ namespace BlazorEcommerce_V2.Client.Services.ProductService
         {
             var result = (categoryUrl == null) ? await _http.GetFromJsonAsync<ServiceResponse<List<Product>>>("api/product/featured") :
                 await _http.GetFromJsonAsync<ServiceResponse<List<Product>>>($"api/product/category/{categoryUrl}");
+            
             if (result != null && result.Data != null)
-                Products = result.Data;
-            if(Products.Count == 0)
-            { Message = "No products found"; }
+             Products = result.Data; 
+
+            if (Products.Count == 0  || result.Data == null)
+            {
+                Products = new List<Product>();
+                Message = "No products found";
+            }
+
             CurrentPage = 1;
             PageCount = 0;
             //chamada de evento quando metodo GetProducts for acionado
@@ -66,13 +72,13 @@ namespace BlazorEcommerce_V2.Client.Services.ProductService
             LastSearchText = searchText;
             //pq somente se eu adicionar um breakpoint a atualizacao de Products com evento funciona?
             var result = await _http.GetFromJsonAsync<ServiceResponse<ProductSearchResult>>($"api/product/search/{searchText}/{page}");
-            
-            if( result != null && result.Data != null )
-                {
-                    Products = result.Data.Products;
-                    CurrentPage = result.Data.CurrentPage;
-                    PageCount = result.Data.Pages;
-                }
+
+            if (result != null && result.Data != null)
+            {
+                Products = result.Data.Products;
+                CurrentPage = result.Data.CurrentPage;
+                PageCount = result.Data.Pages;
+            }
 
             if (result == null || Products.Count == 0) Message = "No products found.";
             ProductsChanged?.Invoke();
