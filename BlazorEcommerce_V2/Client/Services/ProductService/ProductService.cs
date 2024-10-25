@@ -45,7 +45,7 @@ namespace BlazorEcommerce_V2.Client.Services.ProductService
                 await _http.GetFromJsonAsync<ServiceResponse<List<Product>>>($"api/product/category/{categoryUrl}");
             
             if (result != null && result.Data != null)
-             Products = result.Data; 
+                Products = result.Data; 
 
             if (Products.Count == 0  || result.Data == null)
             {
