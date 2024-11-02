@@ -13,4 +13,5 @@
 
 .dropdown-item:hover {
     background-color: white;
+    text-decoration: underline;
 }

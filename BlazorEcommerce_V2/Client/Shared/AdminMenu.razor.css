@@ -10,4 +10,5 @@ do margin-left da tag a ????? */
 
 .dropdown-item:hover {
     background-color: white;
+    text-decoration: underline;
 }
