@@ -1,13 +1,13 @@
-.navbar-toggler {
+/*.navbar-toggler {
     color: rgba(255, 255, 255, 0.1);
-}
+}*/
 
-.top-row {
-    height: 3.5rem;
-    background-color: rgba(0,0,0,0.4);
-}
+/*.top-row {
+    height: 3.5rem;*/
+/*background-color: rgba(0,0,0,0.4);*/
+/*}*/
 
-.navbar-brand {
+.brand {
     font-size: 1.1rem;
 }
 
@@ -18,45 +18,150 @@
     top: -2px;
 }
 
-.nav-item {
+
+/*.nav-item {
     font-size: 0.9rem;
     padding-bottom: 0.5rem;
     padding-top: 0.5rem;
-}
+}*/
 
-    .nav-item ::deep a {
+/*    .nav-item ::deep a {
         color: #d7d7d7;
         border-radius: 4px;
         height: 3rem;
         display: flex;
         align-items: center;
         line-height: 3rem;
-    }
+    }*/
 
-.nav-item ::deep a.active {
+/*faz um sombreado branco no fundo na lista suspena das categorias*/
+/*.nav-item ::deep a.active {
     background-color: rgba(255,255,255,0.25);
     color: white;
-}
+}*/
 
-.nav-item ::deep a:hover {
+/*.nav-item ::deep a:hover {
     background-color: rgba(255,255,255,0.1);
     color: white;
+}*/
+
+/*.flex-nav {
+    flex-direction: column;
+}*/
+
+
+a {
+    color: white;
+    text-decoration: unset;
 }
 
-.flex-nav {
-    flex-direction: column;
+    a:hover {
+        background-color:
+    }
+
+
+
+.title-application {
+    display: block;
+    height: 3.5rem;
 }
+
+
+
+
+/*.collapse-category {
+    display: none;
+}*/
+
+.collapse-mobile-category {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .2s ease-out;
+}
+
+.expand-mobile-category {
+    max-height: 500px; /* Adjust based on your content */
+    overflow: hidden;
+    transition: max-height 1s ease-in;
+}
+
+
+
+.menu-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.item {
+    padding: 6px;
+}
+
+    .item:clicked {
+        text-decoration: underline;
+    }
+
 
 @media (min-width: 641px) {
-    .navbar-toggler, .navbar-toggler-wrapper {
+    /*serve p nada*/
+    /* .navbar-toggler {
         display: none;
-    }
-    .flex-nav {
+    }*/
+
+    /*  estou aqui desativando Lets Buy pq esta fixa no html.*/
+    /*  .navbar-toggler-wrapper{
+        display: none;
+    }*/
+
+    /* .flex-nav {
         flex-direction: row;
         display: flex;
+    }*/
+    /*.collapse {*/
+    /* Never collapse the sidebar for wide screens */
+    /*acessa a prop collapse e coloca false pra nao colapsar*/
+    /*display: block;
+    }*/
+
+    .collapse-mobile-category {
+        max-height: unset;
+        overflow: unset;
+        transition: unset;
     }
-    .collapse {
-        /* Never collapse the sidebar for wide screens */
+
+    .title-application {
+        display: none;
+    }
+
+    .collapse-category {
         display: block;
     }
+
+    .menu-layout {
+        flex-direction: row;
+        height: 58px;
+        align-items: center;
+    }
+
+    .item {
+        padding: 15px;
+        width: 10rem;
+        text-align: center;
+    }
+
+        .item:hover {
+            /*opacity: 0.6;*/
+            /*background-image: linear-gradient(180deg, rgba(77, 91, 119) 0%, rgba(83, 97, 121) 70%);*/
+            background-image: linear-gradient(180deg, rgba(77, 91, 119, 0.6) 0%, rgba(83, 97, 121, 0.6) 70%);
+            outline: 0.3px solid white;
+            border-radius: 5px;
+            transition: 0.3s;
+            /*transform: scale(1.2);*/
+        }
+
+        .item:hover a {
+            transform: scale(1.1);
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
 }
