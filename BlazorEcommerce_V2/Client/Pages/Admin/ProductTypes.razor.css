@@ -7,11 +7,6 @@
     flex: 1;
 }
 
-.row > .col:nth-child(2){
-    /*background-color: red;*/
-    width: 10px;
-}
-
 h3{
     margin: 1rem 1rem 1rem 1rem;
 }
