@@ -19,7 +19,7 @@
     @if (category.Editing)
     {
         <EditForm Model="editingCategory" OnSubmit="UpdateCategory">
-            <div class="row">
+            <div class="row-category">
                 <div class="col">
                     <InputText @bind-Value="editingCategory.Name" class="form-control"></InputText>
                 </div>
@@ -29,7 +29,7 @@
                 <div class="col col-visible"> @*ao desmarcar o element InputCheckbox, a variavel editingCategory recebe false? *@ 
                     <InputCheckbox @bind-Value="editingCategory.Visible" style="transform: scale(1.5, 1.5)"></InputCheckbox>
                 </div>
-                <div class="col">
+                <div class="col-category">
                     <button type="submit" class="btn btn-primary">
                         <i class="oi oi-cloud-upload"></i>
                     </button>
@@ -42,7 +42,7 @@
     }
     else
     {
-        <div class="row">
+        <div class="row-category">
             <div class="col">
                 @category.Name
             </div>
@@ -54,7 +54,7 @@
                     @(category.Visible ? "✔️" : "")
                 </span>
             </div>
-            <div class="col">
+            <div class="col-category">
                 <button class="btn btn-primary" @onclick="(() => EditCategory(category))">
                     <i class="oi oi-pencil"></i>
                 </button>
