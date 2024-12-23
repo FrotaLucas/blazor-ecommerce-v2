@@ -2,6 +2,8 @@
 @inject IAuthService AuthService
 @attribute [Authorize]
 
+<div class="profile-container">
+
 <AuthorizeView>
     <h3>Profile  <i>@context.User.Identity.Name</i>.</h3>
 </AuthorizeView>
@@ -28,6 +30,8 @@
     <button type="submit" class="btn btn-primary"> Apply</button>
 </EditForm>
     <span> @message</span>
+</div>
+
 
 @code {
     UserChangePassword request = new UserChangePassword();
