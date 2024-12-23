@@ -7,7 +7,7 @@
     flex: 1;
 }
 
-h3{
+h3 {
     margin: 1rem 1rem 1rem 1rem;
 }
 
@@ -16,15 +16,16 @@ h3{
     margin-left: 1rem;
     margin-bottom: 2rem;
 }
-.add-button{
+
+.add-button {
     margin-top: 2rem;
 }
-@media (max-width: 640px)
-{
+
+@media (max-width: 640px) {
     h3 {
         margin: 1rem 1rem 1rem 2.5rem;
-        /*margin-left: 1rem;*/
     }
+
     .producttype-container {
         width: 80%;
         margin-left: 2.5rem;
