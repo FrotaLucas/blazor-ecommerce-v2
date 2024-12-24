@@ -15,12 +15,20 @@
     text-align: center;
 }
 
+.list-unstyled {
+    margin-right: 20%;
+}
+
 .page-selection{
     margin-right: 15px;
     margin-bottom: 30px;
 }
 
-@media (max-width: 1023.98px) {
+.text-justify{
+    text-align: justify;
+}
+
+@media (max-width: 640px) {
     .media {
         flex-direction: column;
     }
@@ -28,5 +36,11 @@
     .media-img-wrapper {
         width: 100%;
         height: auto;
+    }
+
+    .list-unstyled
+    {
+        margin-left: 20px;
+        margin-right: 20px;
     }
 }
