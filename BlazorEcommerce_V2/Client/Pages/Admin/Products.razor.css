@@ -1,4 +1,9 @@
-﻿img {
+﻿.product-container {
+    margin-top: 2rem;
+    margin-left: 1rem;
+}
+
+img {
     max-height: 100px;
     max-width: 100px;
 }
@@ -8,4 +13,14 @@
     float: right;
     margin-right: 150px;
     margin-bottom: 50px;
+}
+
+@media (max-width: 640px)
+{
+    .invisible-mobile
+    {
+        background-color: red;
+        display: none;
+    }
+
 }
