@@ -5,6 +5,9 @@
     @inject IAuthService AuthService
 
     <PageTitle>Shopping Cart</PageTitle>
+
+<div class="cart-container">
+    
     <h3>Shopping Cart</h3>
 
     @if(cartProducts == null || cartProducts.Count == 0)
@@ -18,10 +21,10 @@
     } *@
     else
     {
-        <div>
+        <div class="outer-container"> 
             @foreach( var product in cartProducts)
             {
-                <div class="container">
+                <div class="inner-container">
 
                     <div class="image-wrapper">
                         <img src="@product.ImageUrl" alt="@product.Title" class="image" />
@@ -44,22 +47,33 @@
                      </div>
                 </div>
             }
-             <div class="cart-product-price">
-                 Total (@cartProducts.Count): €@cartProducts.Sum(@product => @product.Price * product.Quantity)
-             </div>
+
+
+            <div class="cart-footer">
+
+                 <div>
+                     Total (@cartProducts.Count): €@cartProducts.Sum(@product => @product.Price * product.Quantity)
+                 </div>
+
+
+                @if(isAuthenticated)
+                {
+                    <div>
+                        <h5>Delivery Service</h5>
+                        <AddressForm />
+                        <p></p>
+                    </div>
+                }
+                <button @onclick="PlaceOrder" class="btn alert-success">Checkout</button>
+          
+            </div>
+
+
         </div>
 
-        @if(isAuthenticated)
-        {
-            <div>
-                <h5>Delivery Service</h5>
-                <AddressForm />
-                <p></p>
-            </div>
-        }
-        <button @onclick="PlaceOrder" class="btn alert-success float-end mt-1">Checkout</button>
 
     } 
+</div>
 
 @code {
     public List<CartProductResponse> cartProducts = null;
