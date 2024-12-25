@@ -11,47 +11,52 @@
 
 else
 {
-    <h3>Product Details</h3>
-    <div class="media">
-        <div class="media-img-wrapper mr-2">
-            <img class="media-img" src="@product.ImageUrl" alt="@product.Title" />
-        </div>
-        <div class="media-body">
+    <div class="product-details-container">
 
-            <h2 class="mb-0">@product.Title</h2>
-
-            <p>@product.Description</p>
-            <div class="mb-3">
-                @if (product.Variants != null && product.Variants.Count > 1)
-                {
-                    <select class="form-selected" @bind="currentTypeId">
-                        @foreach (var item in product.Variants)
-                        {
-                            <option value="@item.ProductTypeId">@item.ProductType.Name</option>
-                        }
-                    </select>
-                }
-
+        <h3>Product Details</h3>
+        <div class="media">
+            <div class="media-img-wrapper mr-2">
+                <img class="media-img" src="@product.ImageUrl" alt="@product.Title" />
             </div>
+            <div class="media-body">
 
-            @if (GetSelectedVariant() != null)
-            {
-                @if (GetSelectedVariant().OriginalPrice > GetSelectedVariant().Price)
+                <h2 class="mb-0">@product.Title</h2>
+
+                <p class="justify-text">@product.Description</p>
+                <div class="mb-3">
+                    @if (product.Variants != null && product.Variants.Count > 1)
+                    {
+                        <select class="form-selected" @bind="currentTypeId">
+                            @foreach (var item in product.Variants)
+                            {
+                                <option value="@item.ProductTypeId">@item.ProductType.Name</option>
+                            }
+                        </select>
+                    }
+
+                </div>
+
+                @if (GetSelectedVariant() != null)
                 {
-                    <h6 class="text-muted original-price">
-                        €@GetSelectedVariant().OriginalPrice
-                    </h6>
+                    @if (GetSelectedVariant().OriginalPrice > GetSelectedVariant().Price)
+                    {
+                        <h6 class="text-muted original-price">
+                            €@GetSelectedVariant().OriginalPrice
+                        </h6>
+                    }
+                    <h4 class="price">
+                        €@GetSelectedVariant().Price
+                    </h4>
                 }
-                <h4 class="price">
-                    €@GetSelectedVariant().Price
-                </h4>
-            }
-            @* NAO EXECUTA usando @AddToCart() *@
-            <button class="btn btn-primary" onclick="@AddToCart">
-                <i class="oi oi-cart"></i>&nbsp;&nbsp;&nbsp;Add To Cart
-            </button>
+                @* NAO EXECUTA usando @AddToCart() *@
+                <button class="btn btn-primary" onclick="@AddToCart">
+                    <i class="oi oi-cart"></i>&nbsp;&nbsp;&nbsp;Add To Cart
+                </button>
+            </div>
         </div>
+
     </div>
+
 }
 
 
