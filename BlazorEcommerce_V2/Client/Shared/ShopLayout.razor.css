@@ -19,52 +19,27 @@ main {
     height: 3.5rem;
     display: flex;
     align-items: center;
+    position: sticky; /*deve ser para todas telas*/
+    top: 0;
+    z-index: 1;
 }
 
-    .top-row ::deep a, .top-row ::deep .btn-link {
-        white-space: nowrap;
-        /*margin-left: 15rem;*/
-        text-decoration: none;
-    }
-
-    .top-row ::deep a:hover, .top-row ::deep .btn-link:hover {
-        text-decoration: underline;
-    }
-
-    .top-row ::deep a:first-child {
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-@media (max-width: 640.98px) {
-  
-    .top-row.auth {
-        justify-content: space-between;
-    }
-
-    .top-row ::deep a, .top-row ::deep .btn-link {
-        margin-left: 0;
-    }
+/*talvez precise*/
+/*para o mobile. Mantem o conteudo da Main e barra to titulo alinhadas*/
+.top-row, article {
+    /* padding-left: 2rem !important;
+    padding-right: 1.5rem !important;*/
 }
 
-@media (min-width: 641px) {
-    .page {
-        flex-direction: row;
-    }
-    .top-row {
-        position: sticky;
-        top: 0;
-        z-index: 1;
+/*only cellphone*/
+@media (max-width: 641px) 
+{
+    .page { /* colocar aqui padding da pagina  para mobile*/
+        /*background-color: red;*/
     }
 
-    .top-row.auth ::deep a:first-child {
-        flex: 1;
-        text-align: right;
-        width: 0;
-    }
-
-    .top-row, article {
-        padding-left: 2rem !important;
+ /*   .px-2 {
+        padding-left: 1.5rem !important;
         padding-right: 1.5rem !important;
-    }
+    }*/
 }
