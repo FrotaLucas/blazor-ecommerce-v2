@@ -7,6 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Shared\AddressForm.razor.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Shared\AddressForm.razor.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove=".gitignore" />
     <None Remove="Pages\Admin\Categories.razor.css" />
     <None Remove="Pages\Admin\EditProduct.razor.css" />
