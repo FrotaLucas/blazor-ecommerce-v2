@@ -5,6 +5,7 @@
     <span>
         You haven't specified a delivery address, yet.
         <br />
+        <br />
         <button class="btn btn-primary" @onclick="InitAddress">Add address</button>
     </span>
 }
@@ -25,31 +26,31 @@ else
     <EditForm Model="address" OnSubmit="SubmitAddress">
         <div class="mb-3">
             <label for="firstname">First Name</label>
-            <InputText id="firstname" @bind-Value="address.FirstName" class="form-control" />
+            <input id="firstname" @bind="address.FirstName" class="input-style" />
         </div>
         <div class="mb-3">
             <label for="lastname">Last Name</label>
-            <InputText id="lastname" @bind-Value="address.LastName" class="form-control" />
+            <input id="lastname" @bind="address.LastName" class="input-style" />
         </div>
         <div class="mb-3">
             <label for="street">Street</label>
-            <InputText id="street" @bind-Value="address.Street" class="form-control" />
+            <input id="street" @bind="address.Street" class="input-style" />
         </div>
         <div class="mb-3">
             <label for="city">City</label>
-            <InputText id="city" @bind-Value="address.City" class="form-control" />
+            <input id="city" @bind="address.City" class="input-style" />
         </div>
         <div class="mb-3">
             <label for="state">State</label>
-            <InputText id="state" @bind-Value="address.State" class="form-control" />
+            <input id="state" @bind="address.State" class="input-style" />
         </div>
         <div class="mb-3">
             <label for="zip">ZIP/Postal Code</label>
-            <InputText id="zip" @bind-Value="address.Zip" class="form-control" />
+            <input id="zip" @bind="address.Zip" class="input-style" />
         </div>
         <div class="mb-3">
             <label for="country">Country</label>
-            <InputText id="country" @bind-Value="address.Country" class="form-control" />
+            <input id="country" @bind="address.Country" class="input-style" />
         </div>
         <button type="submit" class="btn btn-primary">Save</button>
     </EditForm>
