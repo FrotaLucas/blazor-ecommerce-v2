@@ -6,7 +6,7 @@ This project is a Ecommerce application built for selling products online, allow
 
 ## Technologies Used
 
-- **..NET Core**: Backend framework for building robust and scalable web applications.
+- **.NET Core**: Backend framework for building robust and scalable web applications.
 - **.Blazor**: Frontend framework for building interactive web UIs using C# instead of JavaScript.
 - **.AspNetCore Components**: Reusable UI components for building modern web applications.
 - **.Entity Framework Core**: For database management and object-relational mapping (ORM).
