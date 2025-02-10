@@ -1,6 +1,6 @@
 # Blazor Ecommerce
 
-This project is a Ecommerce application built for selling products online, allowing users to purchase items using credit card, PayPal, or direct bank transfer.
+This project is a Ecommerce application built for selling E-books, Blue-Ray, Stream, VHS and videgames online, allowing users to purchase items using credit card, PayPal, or direct bank transfer.
 
 ---
 
